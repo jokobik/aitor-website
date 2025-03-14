@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MyWeb</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+
+    </header>
+
+    <main>
+        <h1>
+            <a href="{% url 'index' %}">Web personal</a>
+        </h1>
+        <h2>{{ titulo_pagina }}</h2>
+        {% block contenido %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <div id="fizq" class="display-ib">
+            <section>
+                Ley de privacidad y tratamiento de datos (EU)
+                <br>
+                Todos los derechos reservados
+            </section>
+        </div>
+        <div id="fcer" class="display-ib">
+            <div>
+                <a href="https://www.linkedin.com/in/aitor-lopez-roncero">
+                    <img class="icon-footer" src="{% static 'images/logolinkedin.png' %}" alt="Logo Linkedin">
+                </a>
+            </div>
+        </div>
+        <div id="fder" class="display-ib">
+            <section>
+                Desarrollador:
+                <br>
+                Aitor López
+            </section>
+        </div>
+    </footer>
+</body>
+
+
+</html>

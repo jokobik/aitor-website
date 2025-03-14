@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<ul>
+    <li>ID: {{ educacion.id }}</li>
+    <li>Puesto: {{ educacion.titulo }}</li>
+    <li>Periodo: {{ mes_inicio_nombre }} {{ educacion.anio_inicio }}-{{ mes_fin_nombre }} {{ educacion.anio_fin }}</li>
+    <li>Descripción: {{ educacion.desripcion }}</li>
+</ul>
+<a href="{% url 'experiencia_list' %}">Volver</a>
+{% endblock %}

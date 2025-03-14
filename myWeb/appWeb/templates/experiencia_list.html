@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+    {% for exp in lista_experiencia %}
+    <ul>
+        <li>Puesto: {{ exp.puesto }}</li>
+        <li>Empresa: {{ exp.empresa }}</li>
+        <li><a href="{% url 'experiencia_detail' exp.id %}">Ver</a></li>
+    </ul>
+    {% endfor %}
+{% endblock %}

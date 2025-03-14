@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<ul>
+    <li>ID: {{ certificado.id }}</li>
+    <li>Titulo: {{ certificado.titulo }}</li>
+    <li>Expedición: {{ mes_expedicion_nombre }} {{ certificado.anio_expedicion }}</li>
+
+    {% if certificado.id_credencial %}
+        <li>ID credencial: {{ certificado.id_credencial }}</li>
+    {% endif %}
+
+    {% if certificado.url %}
+        <li>Enlace: <a href="{{ certificado.url }}">Ver certificado</a></li>
+    {% endif %}
+
+    {% if certificado.imagen %}
+        <li>Imagen: </li>
+        <img src="{{ certificado.imagen.url }}" alt="{{ certificado.titulo }} ">
+    {% endif %}
+
+    {% if certificado.descripcion %}
+        <li>Descripción: {{ certificado.descripcion }}</li>
+    {% endif %}
+</ul>
+<a href="{% url 'certificado_list' %}">Volver</a>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+    {% for pro in lista_proyecto %}
+    <ul>
+        <li>Titulo: {{ pro.titulo }}</li>
+        <li>url: {{ pro.url }}</li>
+        <li><a href="{% url 'proyecto_detail' pro.id %}">Ver</a></li>
+    </ul>
+    {% endfor %}
+{% endblock %}

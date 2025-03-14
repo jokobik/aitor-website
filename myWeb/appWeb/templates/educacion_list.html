@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+    {% for ed in lista_educacion %}
+    <ul>
+        <li>Titulo: {{ ed.titulo }}</li>
+        <li>centro: {{ ed.centro }}</li>
+        <li><a href="{% url 'educacion_detail' ed.id %}">Ver</a></li>
+    </ul>
+    {% endfor %}
+{% endblock %}

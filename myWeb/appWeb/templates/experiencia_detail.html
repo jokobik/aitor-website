@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<ul>
+    <li>ID: {{ experiencia.id }}</li>
+    <li>Puesto: {{ experiencia.puesto }}</li>
+    <li>Empresa: {{ experiencia.empresa }}</li>
+    <li>Periodo: {{ mes_inicio_nombre }} {{ experiencia.anio_inicio }}-{{ mes_fin_nombre }} {{ experiencia.anio_fin }}</li>
+    <li>Descripción: {{ experiencia.desripcion }}</li>
+</ul>
+<a href="{% url 'experiencia_list' %}">Volver</a>
+{% endblock %}

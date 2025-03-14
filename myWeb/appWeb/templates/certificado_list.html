@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+    {% for cer in lista_certificado %}
+    <ul>
+        <li>Titulo: {{ cer.titulo }}</li>
+        <li>Emisor: {{ cer.emisor }}</li>
+        <li><a href="{% url 'certificado_detail' cer.id %}">Ver</a></li>
+    </ul>
+    {% endfor %}
+{% endblock %}

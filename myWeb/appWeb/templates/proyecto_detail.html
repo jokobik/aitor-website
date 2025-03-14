@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<ul>
+    <li>ID: {{ proyecto.id }}</li>
+    <li>Titulo: {{ proyecto.titulo }}</li>
+
+    {% if proyecto.url %}
+        <li>Enlace: <a href="{{ proyecto.url }}">Ver proyecto</a></li>
+    {% endif %}
+
+    {% if proyecto.descripcion %}
+        <li>Descripción: {{ proyecto.descripcion }}</li>
+    {% endif %}
+</ul>
+<a href="{% url 'proyecto_list' %}">Volver</a>
+{% endblock %}
