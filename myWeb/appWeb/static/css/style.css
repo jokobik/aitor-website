@@ -1,53 +1,104 @@
-h1 {
-    color: aqua; /* Color del texto del h1 */
+/* Importar una fuente de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-h2 {
-    color: #a450bf; /* Color del texto del h2 */
+html {
+    font-size: 16px;
 }
 
 body {
-    margin: 0 30px; /* Añade un margen de 30px a la izquierda y derecha del body */
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+
+header {
+    background-color: #222;
+    color: white;
+    padding: 20px 0;
+    width: 100%;
+    margin: 0 auto;
+}
+
+h1 a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+h1 a:hover {
+    color: #007BFF;
+    text-decoration: underline;
+}
+
+main {
+    width: 95%;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    min-height: 50vh;
 }
 
 footer {
-    border-top: 7px solid turquoise; /* Borde superior del footer con color turquoise */
-    color: #ff3838; /* Color del texto del footer */
-    font-size: 18px; /* Tamaño de la fuente del footer */
-    font-weight: bolder; /* Hace el texto más grueso */
-    width: 100%; /* Asegura que el footer ocupe todo el ancho de la página */
-    position: fixed; /* Fija el footer en la parte inferior de la página */
-    bottom: 0; /* Asegura que el footer se quede pegado a la parte inferior */
-    left: 0; /* Alinea el footer al borde izquierdo */
-    padding: 10px 0; /* Padding en la parte superior e inferior del footer */
-    box-sizing: border-box; /* Incluye el padding en el cálculo total del ancho y alto */
+    background: #222;
+    color: white;
+    padding: 20px 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-#fizq, #fder {
-    margin: 0 30px; /* Margen de 30px a la izquierda y derecha de los divs de izquierda y derecha */
+#fizq, #fder, #fcer {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
 }
 
 #fizq {
-    text-align: left; /* Alinea el contenido del div izquierdo al lado izquierdo */
-    float: left; /* Asegura que el div izquierdo flote a la izquierda */
-    width: 45%; /* El ancho del div izquierdo será el 45% del espacio disponible */
+    text-align: left;
 }
 
 #fder {
-    text-align: right; /* Alinea el contenido del div derecho al lado derecho */
-    float: right; /* Asegura que el div derecho flote a la derecha */
-}
-
-#fcer {
-    text-align: center; /* Centra el contenido dentro del div central */
-    margin: 0 auto; /* Centra el div del medio automáticamente */
-}
-
-.display-ib {
-    display: inline-block; /* Hace que los elementos con esta clase sean bloques en línea */
+    text-align: right;
 }
 
 .icon-footer {
-    max-width: 40px; /* Limita el ancho máximo de los iconos a 40px */
-    max-height: 40px; /* Limita la altura máxima de los iconos a 40px */
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
+    transition: transform 0.3s ease;
+    border-radius: 15%;
+}
+
+.icon-footer:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #fizq, #fder, #fcer {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .icon-footer {
+        margin: 10px auto;
+    }
 }

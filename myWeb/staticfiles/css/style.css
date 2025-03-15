@@ -1,0 +1,53 @@
+h1 {
+    color: aqua; /* Color del texto del h1 */
+}
+
+h2 {
+    color: #a450bf; /* Color del texto del h2 */
+}
+
+body {
+    margin: 0 30px; /* Añade un margen de 30px a la izquierda y derecha del body */
+}
+
+footer {
+    border-top: 7px solid turquoise; /* Borde superior del footer con color turquoise */
+    color: #ff3838; /* Color del texto del footer */
+    font-size: 18px; /* Tamaño de la fuente del footer */
+    font-weight: bolder; /* Hace el texto más grueso */
+    width: 100%; /* Asegura que el footer ocupe todo el ancho de la página */
+    position: fixed; /* Fija el footer en la parte inferior de la página */
+    bottom: 0; /* Asegura que el footer se quede pegado a la parte inferior */
+    left: 0; /* Alinea el footer al borde izquierdo */
+    padding: 10px 0; /* Padding en la parte superior e inferior del footer */
+    box-sizing: border-box; /* Incluye el padding en el cálculo total del ancho y alto */
+}
+
+#fizq, #fder {
+    margin: 0 30px; /* Margen de 30px a la izquierda y derecha de los divs de izquierda y derecha */
+}
+
+#fizq {
+    text-align: left; /* Alinea el contenido del div izquierdo al lado izquierdo */
+    float: left; /* Asegura que el div izquierdo flote a la izquierda */
+    width: 45%; /* El ancho del div izquierdo será el 45% del espacio disponible */
+}
+
+#fder {
+    text-align: right; /* Alinea el contenido del div derecho al lado derecho */
+    float: right; /* Asegura que el div derecho flote a la derecha */
+}
+
+#fcer {
+    text-align: center; /* Centra el contenido dentro del div central */
+    margin: 0 auto; /* Centra el div del medio automáticamente */
+}
+
+.display-ib {
+    display: inline-block; /* Hace que los elementos con esta clase sean bloques en línea */
+}
+
+.icon-footer {
+    max-width: 40px; /* Limita el ancho máximo de los iconos a 40px */
+    max-height: 40px; /* Limita la altura máxima de los iconos a 40px */
+}
