@@ -10,32 +10,50 @@
 </head>
 <body>
     <header>
-
+        <div id="hizq">
+            <h1><a href="{% url 'index' %}">Portfolio</a></h1>
+        </div>
+        <div id="hder">
+            <h2>{{ titulo_pagina }}</h2>
+        </div>
     </header>
 
+    <nav>
+        <h2></h2>
+        <h2 class="inline-element"><a href="{% url 'index' %}">Home</a></h2>
+        <h1 class="inline-element">|</h1>
+        <h2 class="inline-element"><a href="{% url 'experiencia' %}">Expriencia</a></h2>
+        <h1 class="inline-element">|</h1>
+        <h2 class="inline-element"><a href="{% url 'educacion' %}">Educación</a></h2>
+        <h1 class="inline-element">|</h1>
+        <h2 class="inline-element"><a href="{% url 'certificado' %}">Certificados</a></h2>
+        <h1 class="inline-element">|</h1>
+        <h2 class="inline-element"><a href="{% url 'contacto' %}">Contacto</a></h2>
+        <h2></h2>
+    </nav>
+
     <main>
-        <h1>
-            <a href="{% url 'index' %}">Web personal</a>
-        </h1>
-        <h2>{{ titulo_pagina }}</h2>
         {% block contenido %}
         {% endblock %}
     </main>
 
     <footer>
-        <div id="fizq" class="display-ib">
+        <div id="fizq">
             <section>
                 Todos los derechos reservados
             </section>
         </div>
-        <div id="fcer" class="display-ib">
+        <div id="fcer">
             <div>
+                <a href="https://github.com/jokobik?tab=repositories">
+                    <img class="icon-footer" src="{% static 'images/logogithub.png' %}" alt="Logo GitHub">
+                </a>
                 <a href="https://www.linkedin.com/in/aitor-lopez-roncero">
                     <img class="icon-footer" src="{% static 'images/logolinkedin.png' %}" alt="Logo Linkedin">
                 </a>
             </div>
         </div>
-        <div id="fder" class="display-ib">
+        <div id="fder">
             <section>
                 Desarrollador
                 <br>
@@ -52,6 +70,4 @@
     <a class="badge-base__link LI-simple-link" href="https://es.linkedin.com/in/aitor-lopez-roncero?trk=profile-badge">Aitor Lopez Roncero</a></div>
     -->
 </body>
-
-
 </html>

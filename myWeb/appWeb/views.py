@@ -2,7 +2,7 @@ from appWeb.models import anio_inicio
 from django.shortcuts import render
 from django.views.generic import DetailView, ListView
 from django.http import HttpResponse
-from .models import Proyecto, Experiencia, Educacion, Certificado
+from .models import Experiencia, Educacion, Certificado, Contacto
 import calendar
 import locale
 
@@ -113,25 +113,14 @@ class CertificadoDetailView(DetailView):
         return context
 
 
-class ProyectoListView(ListView):
-    model = Proyecto
-    template_name = 'proyecto_list.html'
-    # - se usa para hacer el orden inverso
-    queryset = Proyecto.objects.order_by('id')
-    context_object_name = 'lista_proyecto'
+class ContactoListView(ListView):
+    model = Contacto
+    template_name = 'contacto.html'
+    queryset = Contacto.objects.order_by('id')
+    context_object_name = 'lista_contacto'
 
     def get_context_data(self, **kwargs):
-        context = super(ProyectoListView, self).get_context_data(**kwargs)
-        context['titulo_pagina'] = 'Proyectos'
+        context = super(ContactoListView, self).get_context_data(**kwargs)
+        context['titulo_pagina'] = 'Contacto'
         return context
 
-
-class ProyectoDetailView(DetailView):
-    model = Proyecto
-    template_name = 'proyecto_detail.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(ProyectoDetailView, self).get_context_data(**kwargs)
-        context['titulo_pagina'] = 'Detalles del proyecto'
-
-        return context

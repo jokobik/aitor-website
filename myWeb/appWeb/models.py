@@ -25,13 +25,8 @@ anio_actual = datetime.datetime.now().year
 anio_inicio = anio_actual - 75
 ANIO_CHOICES = [(str(year), str(year)) for year in reversed(range(anio_inicio, anio_actual + 1))]
 
-class Proyecto(models.Model):
-    titulo = models.CharField(max_length=200)
-    descripción = models.TextField()
-    url = models.URLField(blank=True, null=True)
-
-    def __str__(self):
-        return self.titulo
+# Definir las opciones del archivo
+ARCHIVO_CHOICES = [('Curriculum', 'Curriculum'), ('Vida Laboral', 'Vida Laboral'), ('Otro', 'Otro')]
 
 
 class Experiencia(models.Model):
@@ -82,3 +77,12 @@ class Certificado(models.Model):
 
     def __str__(self):
         return f"{self.titulo} emitido por {self.emisor}"
+
+
+class Contacto(models.Model):
+    nombre_persona = models.CharField(max_length=200)
+    tipo_archivo = models.CharField(max_length=50, choices=ARCHIVO_CHOICES, default='Curriculum')
+    archivo = models.FileField(upload_to='pdfs/', blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.tipo_archivo} de {self.nombre_persona}"
