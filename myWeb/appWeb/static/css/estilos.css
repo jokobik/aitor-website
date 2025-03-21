@@ -1,53 +1,206 @@
-h1 {
-    color: aqua; /* Color del texto del h1 */
+/* Importar una fuente de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+
+/* Reset básico para todos los elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-h2 {
-    color: #a450bf; /* Color del texto del h2 */
-}
+/* -------------------- */
+/* Estilos para elementos */
+/* -------------------- */
 
+/* Estilos generales del cuerpo de la página */
 body {
-    margin: 0 30px; /* Añade un margen de 30px a la izquierda y derecha del body */
+    background-color: #f4f4f4; /* Color de fondo */
+    border-radius: 10px; /* Bordes redondeados */
+    color: #333; /* Color del texto */
+    font-family: 'Inter', sans-serif; /* Fuente principal */
+    line-height: 1.6; /* Altura de línea */
+    padding: 20px; /* Espaciado interno */
+    text-align: center; /* Alineación del texto */
 }
 
+/* Estilos para el pie de página */
 footer {
-    border-top: 7px solid turquoise; /* Borde superior del footer con color turquoise */
-    color: #ff3838; /* Color del texto del footer */
-    font-size: 18px; /* Tamaño de la fuente del footer */
-    font-weight: bolder; /* Hace el texto más grueso */
-    width: 100%; /* Asegura que el footer ocupe todo el ancho de la página */
-    position: fixed; /* Fija el footer en la parte inferior de la página */
-    bottom: 0; /* Asegura que el footer se quede pegado a la parte inferior */
-    left: 0; /* Alinea el footer al borde izquierdo */
-    padding: 10px 0; /* Padding en la parte superior e inferior del footer */
-    box-sizing: border-box; /* Incluye el padding en el cálculo total del ancho y alto */
+    background: #222; /* Color de fondo */
+    border-radius: 10px; /* Bordes redondeados */
+    color: white; /* Color del texto */
+    display: flex; /* Usa Flexbox para alinear elementos */
+    justify-content: space-between; /* Distribuye el espacio entre elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+    padding: 20px 0; /* Espaciado interno */
+    width: 100%; /* Ancho completo */
 }
 
-#fizq, #fder {
-    margin: 0 30px; /* Margen de 30px a la izquierda y derecha de los divs de izquierda y derecha */
+/* Estilos para los enlaces dentro de h1 */
+h1 a {
+    color: white; /* Color del texto */
+    text-decoration: none; /* Sin subrayado */
+    transition: color 0.3s ease; /* Transición suave para el color */
 }
 
-#fizq {
-    text-align: left; /* Alinea el contenido del div izquierdo al lado izquierdo */
-    float: left; /* Asegura que el div izquierdo flote a la izquierda */
-    width: 45%; /* El ancho del div izquierdo será el 45% del espacio disponible */
+/* Efecto hover para los enlaces dentro de h1 */
+h1 a:hover {
+    color: #007BFF; /* Cambia el color al hacer hover */
+    text-decoration: underline; /* Subrayado al hacer hover */
 }
 
-#fder {
-    text-align: right; /* Alinea el contenido del div derecho al lado derecho */
-    float: right; /* Asegura que el div derecho flote a la derecha */
+/* Estilos para el encabezado */
+header {
+    background-color: #222; /* Color de fondo */
+    border-top-left-radius: 10px; /* Borde superior izquierdo redondeado */
+    border-top-right-radius: 10px; /* Borde superior derecho redondeado */
+    color: white; /* Color del texto */
+    display: flex; /* Usa Flexbox para alinear elementos */
+    justify-content: space-between; /* Distribuye el espacio entre elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+    padding: 20px 0; /* Espaciado interno */
+    width: 100%; /* Ancho completo */
 }
 
+/* Estilos para el elemento html */
+html {
+    font-size: 16px; /* Tamaño base de la fuente */
+}
+
+/* Estilos para el contenido principal */
+main {
+    background: white; /* Color de fondo */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Sombra */
+    margin: 20px auto; /* Margen exterior */
+    min-height: 50vh; /* Altura mínima */
+    padding: 20px; /* Espaciado interno */
+    width: 95%; /* Ancho relativo */
+}
+
+/* Estilos para el nav */
+nav {
+    align-items: center; /* Centra verticalmente los div */
+    background-color: #222; /* Color de fondo */
+    border-bottom-left-radius: 10px; /* Borde inferior izquierdo redondeado */
+    border-bottom-right-radius: 10px; /* Borde inferior derecho redondeado */
+    display: flex; /* Usa Flexbox para alinear los div en línea */
+    justify-content: space-around; /* Distribuye el espacio entre los div */
+    padding: 10px 0; /* Espaciado interno */
+}
+
+/* -------------------- */
+/* Estilos para IDs */
+/* -------------------- */
+
+/* Estilos para el elemento con ID #fcer */
 #fcer {
-    text-align: center; /* Centra el contenido dentro del div central */
-    margin: 0 auto; /* Centra el div del medio automáticamente */
+    flex: 1; /* Ocupa el espacio disponible */
+    padding: 10px; /* Espaciado interno */
+    text-align: center; /* Alineación del texto */
 }
 
-.display-ib {
-    display: inline-block; /* Hace que los elementos con esta clase sean bloques en línea */
+/* Estilos para el elemento con ID #fder */
+#fder {
+    flex: 1; /* Ocupa el espacio disponible */
+    padding: 10px; /* Espaciado interno */
+    text-align: right; /* Alineación del texto a la derecha */
 }
 
+/* Estilos para el elemento con ID #fizq */
+#fizq {
+    flex: 1; /* Ocupa el espacio disponible */
+    padding: 10px; /* Espaciado interno */
+    text-align: left; /* Alineación del texto a la izquierda */
+}
+
+/* Estilos para el elemento con ID #hder */
+#hder {
+    flex: 1; /* Ocupa el espacio disponible */
+    padding: 10px; /* Espaciado interno */
+    text-align: right; /* Alineación del texto a la derecha */
+}
+
+/* Estilos para el elemento con ID #hizq */
+#hizq {
+    flex: 1; /* Ocupa el espacio disponible */
+    padding: 10px; /* Espaciado interno */
+    text-align: left; /* Alineación del texto a la izquierda */
+}
+
+/* -------------------- */
+/* Estilos para clases */
+/* -------------------- */
+
+/* Estilos para la clase .icon-footer (íconos en el footer) */
 .icon-footer {
-    max-width: 40px; /* Limita el ancho máximo de los iconos a 40px */
-    max-height: 40px; /* Limita la altura máxima de los iconos a 40px */
+    border-radius: 15%; /* Bordes redondeados */
+    height: 40px; /* Altura */
+    margin-top: 10px; /* Margen superior */
+    transition: transform 0.3s ease; /* Transición suave para el efecto hover */
+    width: 40px; /* Ancho */
+}
+
+/* Efecto hover para la clase .icon-footer */
+.icon-footer:hover {
+    transform: scale(1.1); /* Escala el ícono al hacer hover */
+}
+
+/* Contenedor flexible para elementos en línea */
+.inline-container {
+    display: flex; /* Usa Flexbox */
+    align-items: center; /* Centra verticalmente los elementos */
+    gap: 10px; /* Espacio entre los elementos */
+}
+
+/* Estilos para los elementos en línea */
+.inline-element {
+    display: inline-block; /* Hace que los elementos estén en línea */
+    margin: 0; /* Elimina el margen predeterminado */
+    padding: 0; /* Elimina el padding predeterminado */
+}
+
+/* Estilos para los enlaces dentro de h2 */
+.inline-element a {
+    color: white; /* Color del texto */
+    text-decoration: none; /* Sin subrayado */
+    transition: color 0.3s ease; /* Transición suave para el color */
+}
+
+/* Efecto hover para los enlaces */
+.inline-element a:hover {
+    color: #007BFF; /* Cambia el color al hacer hover */
+    text-decoration: underline; /* Subrayado al hacer hover */
+    transform: scale(1.1);
+}
+
+/* -------------------- */
+/* Media Queries */
+/* -------------------- */
+
+/* Estilos para pantallas con un ancho máximo de 600px */
+@media (max-width: 600px) {
+
+    nav {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+        gap: 10px; /* Espacio entre los contenedores */
+    }
+
+    /* Cambia la dirección del footer a columna */
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Ajustes para los elementos dentro del footer */
+    #fizq, #fder, #fcer {
+        margin-bottom: 10px; /* Margen inferior */
+        text-align: center; /* Alineación del texto */
+    }
+
+    /* Centra los íconos en el footer */
+    .icon-footer {
+        margin: 10px auto; /* Margen automático para centrar */
+    }
 }
