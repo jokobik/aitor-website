@@ -3,8 +3,8 @@
 
 /* Reset básico para todos los elementos */
 * {
-    margin: 0;
     box-sizing: border-box;
+    margin: 0;
     padding: 0;
 }
 
@@ -28,7 +28,6 @@ body {
     font-family: 'Inter', sans-serif; /* Fuente principal */
     line-height: 1.6; /* Altura de línea */
     padding: 20px; /* Espaciado interno */
-    text-align: center; /* Alineación del texto */
 }
 
 /* Estilos para el pie de página */
@@ -131,6 +130,10 @@ nav {
     text-align: left; /* Alineación del texto a la izquierda */
 }
 
+#imagen-perfil {
+    border-radius: 50%;
+}
+
 #titulo-principal {
     font-size: 2.5rem; /* Tamaño base */
 }
@@ -155,13 +158,6 @@ nav {
 /* Efecto hover para la clase .icon-footer */
 .icon-footer:hover {
     transform: scale(1.2); /* Escala el ícono al hacer hover */
-}
-
-/* Contenedor flexible para elementos en línea */
-.inline-container {
-    display: flex; /* Usa Flexbox */
-    align-items: center; /* Centra verticalmente los elementos */
-    gap: 10px; /* Espacio entre los elementos */
 }
 
 /* Estilos para los elementos en línea */

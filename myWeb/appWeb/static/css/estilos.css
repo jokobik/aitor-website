@@ -157,13 +157,6 @@ nav {
     transform: scale(1.2); /* Escala el ícono al hacer hover */
 }
 
-/* Contenedor flexible para elementos en línea */
-.inline-container {
-    display: flex; /* Usa Flexbox */
-    align-items: center; /* Centra verticalmente los elementos */
-    gap: 10px; /* Espacio entre los elementos */
-}
-
 /* Estilos para los elementos en línea */
 .inline-element {
     display: inline-block; /* Hace que los elementos estén en línea */
