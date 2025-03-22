@@ -21,6 +21,7 @@ def index(request):
 #    context = {'titulo_pagina': 'Esxperiencia', 'experiencias': experiencia}
 #    return render(request, 'experiencia_list.html', context)
 
+# Vista para la Experiencia
 class ExperienciaListView(ListView):
     model = Experiencia
     template_name = 'experiencia_list.html'
@@ -33,7 +34,7 @@ class ExperienciaListView(ListView):
         context['titulo_pagina'] = 'Experiencia'
         return context
 
-
+# Vista para la Experiencia detallada
 class ExperienciaDetailView(DetailView):
     model = Experiencia
     template_name = 'experiencia_detail.html'
@@ -51,7 +52,7 @@ class ExperienciaDetailView(DetailView):
 
         return context
 
-
+# Vista para la Educación
 class EducacionListView(ListView):
     model = Educacion
     template_name = 'educacion_list.html'
@@ -64,7 +65,7 @@ class EducacionListView(ListView):
         context['titulo_pagina'] = 'Educación'
         return context
 
-
+# Vista para la Educación detallada
 class EducacionDetailView(DetailView):
     model = Educacion
     template_name = 'educacion_detail.html'
@@ -82,7 +83,7 @@ class EducacionDetailView(DetailView):
 
         return context
 
-
+# Vista para los Certificados
 class CertificadoListView(ListView):
     model = Certificado
     template_name = 'certificado_list.html'
@@ -95,7 +96,7 @@ class CertificadoListView(ListView):
         context['titulo_pagina'] = 'Certificados'
         return context
 
-
+# Vista para los Certificados detallados
 class CertificadoDetailView(DetailView):
     model = Certificado
     template_name = 'certificado_detail.html'
@@ -112,7 +113,7 @@ class CertificadoDetailView(DetailView):
 
         return context
 
-
+# Vista para contactar con el desarrollador
 class ContactoListView(ListView):
     model = Contacto
     template_name = 'contacto.html'
