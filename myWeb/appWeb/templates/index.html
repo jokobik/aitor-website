@@ -3,38 +3,30 @@
 
 {% block contenido %}
 
-<div>
-    <div>
+<div id="perfil">
+    <div id="perfil-izq">
         <section>
             <img id="imagen-perfil" src="{% static 'images/imagenpersonal.jpg' %}" alt="Imagen de perfil">
         </section>
         <section>
-            <h3>Intereses</h3>
-            <ul>
-                <li>Jugador de baloncesto.</li>
-                <li>Entrenador de baloncesto en equipos infantil, secundaria y senior.</li>
-                <li>Buceador con equipo autónomo.</li>
-            </ul>
-        </section>
-    </div>
-    <div>
-        <section>
-            <h3>¿Quien soy?</h3>
-            <p>
+            <h3>Aitor López</h3>
+            <p class="presentacion">
                 Graduado en Industria Digital y en Automatización y Robótica Industrial.
                 Tengo una gran pasión por la tecnología y deseo seguir evolucionando y formándome.
             </p>
-            <p>
+            <p class="presentacion">
                 El Grado Superior en Automatización y Robótica Industrial me aportó competencias de la parte industrial
                 y el Grado en Industria Digital los cocimientos de la parte informática para trabajar en Industria 4.0.
             </p>
-            <p>
+            <p class="presentacion">
                 El Grado de Industria Digital lo realicé en la modalidad de Formación Dual, lo que me permitió aplicar
                 los conocimientos teóricos en casos prácticos.
             </p>
         </section>
 
-        <section>
+    </div>
+    <div id="perfil-der">
+        <section class="section-perfil">
             <h3>Sobre mi</h3>
             <p>
                 🏢 Aciturri Tech:
@@ -44,19 +36,24 @@
                 transformación digital.
             </p>
             <p>
-                🔧 Habilidades y Competencias:
-                • Gestión de proyectos automatizados.
-                • Desarrollo de soluciones automatizadas mediante robots de software (RPA).
-                • Implementación de soluciones para la Industria 4.0.
-                • Integración efectiva entre informática e industria.
+                👨‍🏫 Egibide:
+                Como profesor de Formación Profesional, mi labor incluyó la preparación de temas a
+                impartir en clase, el diseño de ejercicios prácticos para reforzar el aprendizaje y la resolución de
+                dudas para garantizar la comprensión de los estudiantes. Además, me encargué de la creación y
+                corrección de exámenes
             </p>
+
             <p>
                 🎓 Formación:
                 Soy Graduado en Industria Digital por la Universidad de Deusto, donde completé mi formación en modalidad
                 Dual, combinando teoría y práctica en entornos reales, lo que me permitió desarrollar una sólida
                 capacidad para enfrentar desafíos presentes y futuros. Además, poseo estudios en Automatización y
                 Robótica Industrial, lo que ha reforzado mi habilidad para diseñar, implementar y optimizar sistemas
-                automatizados en diversos ámbitos.
+                automatizados en diversos ámbitos. Complemento mi formación con el Máster Universitario en Formación
+                del Profesorado de Educación Secundaria Obligatoria, Bachillerato, Formación Profesional y Enseñanza
+                de Idiomas, en la especialidad de Tecnología e Informática por la Universidad Internacional de
+                Valencia (VIU), que me ha proporcionado las herramientas pedagógicas y de gestión necesarias para
+                liderar y motivar equipos.
             </p>
             <p>
                 🚀 Enfoque Profesional:
@@ -66,10 +63,29 @@
             <p>
                 💡 Pasión por la Tecnología:
                 Estoy en constante búsqueda de oportunidades para evolucionar y formarme en nuevas áreas, contribuyendo
-                al avance tecnológico y a la transformación digital.
+                al avance tecnológico, a la transformación digital y a la enseñanza.
             </p>
         </section>
-
+        <section class="section-perfil">
+            <h3>Habilidades y Competencias:</h3>
+            <ul>
+                <li>Gestión de proyectos automatizados.</li>
+                <li>Desarrollo de soluciones automatizadas mediante robots de software (RPA).</li>
+                <li>Implementación de soluciones para la Industria 4.0.</li>
+                <li>Integración efectiva entre informática e industria.</li>
+                <li>Comunicación efectiva.</li>
+                <li>Adaptabilidad.</li>
+                <li>Planificación y organización.</li>
+            </ul>
+        </section>
+        <section id="section-final" class="section-perfil">
+            <h3>Intereses</h3>
+            <ul>
+                <li>Jugador de baloncesto.</li>
+                <li>Entrenador de baloncesto en equipos infantil, secundaria y senior.</li>
+                <li>Buceador con equipo autónomo.</li>
+            </ul>
+        </section>
     </div>
 </div>
 
