@@ -2,10 +2,22 @@
 
 {% block contenido %}
     {% for exp in lista_experiencia %}
-    <ul>
-        <li>Puesto: {{ exp.puesto }}</li>
-        <li>Empresa: {{ exp.empresa }}</li>
-        <li><a href="{% url 'experiencia_detail' exp.id %}">Ver</a></li>
-    </ul>
+    <section class="secciones secciones-exp-edu">
+        {% if exp.imagen %}
+            <img class="imagen-empresa" src="{{ exp.imagen.url }}" alt="{{ exp.empresa }}">
+        {% endif %}
+        <div class="experiencia-contenido">
+            <h3>{{ exp.puesto }}</h3>
+            <ul class="lista-exp-edu">
+                <li>Empresa: {{ exp.empresa }}</li>
+                <li>Periodo: {{ exp.mes_inicio_nombre }} {{ exp.anio_inicio }} - {{ exp.mes_fin_nombre }} {{ exp.anio_fin }}</li>
+                <li>Descripción</li>
+                <ul>
+                    <li>{{ exp.descripcion }}</li>
+                </ul>
+            </ul>
+
+        </div>
+    </section>
     {% endfor %}
 {% endblock %}

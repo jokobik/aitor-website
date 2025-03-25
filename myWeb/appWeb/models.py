@@ -30,6 +30,7 @@ ARCHIVO_CHOICES = [('Curriculum', 'Curriculum'), ('Vida Laboral', 'Vida Laboral'
 
 
 class Experiencia(models.Model):
+    imagen = models.ImageField(upload_to='experiencia/', blank=True, null=True)
     puesto = models.CharField(max_length=200)
     empresa = models.CharField(max_length=200)
     # Campo para almacenar el mes como texto

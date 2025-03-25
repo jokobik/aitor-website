@@ -32,6 +32,13 @@ class ExperienciaListView(ListView):
     def get_context_data(self, **kwargs):
         context = super(ExperienciaListView, self).get_context_data(**kwargs)
         context['titulo_pagina'] = 'Experiencia'
+
+        for experiencia in context['lista_experiencia']:
+            if experiencia.mes_inicio:
+                experiencia.mes_inicio_nombre = calendar.month_name[int(experiencia.mes_inicio)].capitalize()
+
+            if experiencia.mes_fin:
+                experiencia.mes_fin_nombre = calendar.month_name[int(experiencia.mes_fin)].capitalize()
         return context
 
 # Vista para la Experiencia detallada
