@@ -39,6 +39,14 @@ class ExperienciaListView(ListView):
 
             if experiencia.mes_fin:
                 experiencia.mes_fin_nombre = calendar.month_name[int(experiencia.mes_fin)].capitalize()
+
+            if experiencia.descripcion:
+                # Divide el texto por saltos de línea y filtra puntos vacíos
+                experiencia.descripcion_lista = [
+                    punto.strip()
+                    for punto in experiencia.descripcion.split('\n')
+                    if punto.strip()
+                ]
         return context
 
 # Vista para la Experiencia detallada

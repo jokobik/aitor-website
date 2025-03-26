@@ -13,10 +13,11 @@
                 <li>Periodo: {{ exp.mes_inicio_nombre }} {{ exp.anio_inicio }} - {{ exp.mes_fin_nombre }} {{ exp.anio_fin }}</li>
                 <li>Descripción</li>
                 <ul>
-                    <li>{{ exp.descripcion }}</li>
+                    {% for punto in exp.descripcion_lista %}
+                    <li>{{ punto }}</li>
+                    {% endfor %}
                 </ul>
             </ul>
-
         </div>
     </section>
     {% endfor %}

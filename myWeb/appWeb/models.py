@@ -41,7 +41,13 @@ class Experiencia(models.Model):
     mes_fin = models.CharField(max_length=2, choices=MES_CHOICES, blank=True, null=True) # Puede ser actual
     # Campo para almacenar el año como texto
     anio_fin = models.CharField(max_length=4, choices=ANIO_CHOICES, blank=True, null=True) # Puede ser actual
-    descripcion = models.TextField()
+    # Campo descripción para imprimir como puntos
+    descripcion = models.TextField(
+        blank=True,
+        null=True,
+        verbose_name="Descripción",
+        help_text="Introduce cada punto con un salto de línea y el símbolo • (Ej: • Punto 1\n• Punto 2)"
+    )
 
     def __str__(self):
         return f"{self.puesto} en {self.empresa}"
