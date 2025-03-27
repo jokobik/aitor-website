@@ -46,7 +46,7 @@ class Experiencia(models.Model):
         blank=True,
         null=True,
         verbose_name="Descripción",
-        help_text="Introduce cada punto con un salto de línea y el símbolo • (Ej: • Punto 1\n• Punto 2)"
+        help_text="Introduce cada punto con un salto de línea y el símbolo"
     )
 
     def __str__(self):
@@ -54,6 +54,7 @@ class Experiencia(models.Model):
 
 
 class Educacion(models.Model):
+    imagen = models.ImageField(upload_to='educacion/', blank=True, null=True)
     titulo = models.CharField(max_length=200)
     centro = models.CharField(max_length=200)
     # Campo para almacenar el mes como texto
@@ -64,7 +65,12 @@ class Educacion(models.Model):
     mes_fin = models.CharField(max_length=2, choices=MES_CHOICES, blank=True, null=True) # Puede ser actual
     # Campo para almacenar el año como texto
     anio_fin = models.CharField(max_length=4, choices=ANIO_CHOICES, blank=True, null=True) # Puede ser actual
-    descripcion = models.TextField(blank=True, null=True)
+    descripcion = models.TextField(
+        blank=True,
+        null=True,
+        verbose_name="Descripción",
+        help_text="Introduce cada punto con un salto de línea y el símbolo"
+    )
 
     def __str__(self):
         return f"{self.titulo} en {self.centro}"

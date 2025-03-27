@@ -2,7 +2,6 @@
 
 {% block contenido %}
 <ul>
-    <li>ID: {{ certificado.id }}</li>
     <li>Titulo: {{ certificado.titulo }}</li>
     <li>Expedición: {{ mes_expedicion_nombre }} {{ certificado.anio_expedicion }}</li>
 
@@ -11,7 +10,7 @@
     {% endif %}
 
     {% if certificado.url %}
-        <li>Enlace: <a href="{{ certificado.url }}">Ver certificado</a></li>
+        <li>Enlace: <a href="{{ certificado.url }}">Ver certificado online</a></li>
     {% endif %}
 
     {% if certificado.imagen %}

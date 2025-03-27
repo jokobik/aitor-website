@@ -78,6 +78,23 @@ class EducacionListView(ListView):
     def get_context_data(self, **kwargs):
         context = super(EducacionListView, self).get_context_data(**kwargs)
         context['titulo_pagina'] = 'Educación'
+
+        for educacion in context['lista_educacion']:
+            if educacion.mes_inicio:
+                educacion.mes_inicio_nombre = calendar.month_name[int(educacion.mes_inicio)].capitalize()
+
+            if educacion.mes_fin:
+                educacion.mes_fin_nombre = calendar.month_name[int(educacion.mes_fin)].capitalize()
+
+            if educacion.descripcion:
+                # Divide el texto por saltos de línea y filtra puntos vacíos
+                educacion.descripcion_lista = [
+                    punto.strip()
+                    for punto in educacion.descripcion.split('\n')
+                    if punto.strip()
+                ]
+        return context
+
         return context
 
 # Vista para la Educación detallada
@@ -89,7 +106,7 @@ class EducacionDetailView(DetailView):
         context = super(EducacionDetailView, self).get_context_data(**kwargs)
         context['titulo_pagina'] = 'Detalles del titulo'
 
-        # Obtiene la instancia actual de Experiencia
+        # Obtiene la instancia actual de Educacion
         educacion = self.object
         # Convertir mes_inicio (asumiendo que es un número) a su nombre
         if educacion.mes_inicio:
@@ -109,6 +126,11 @@ class CertificadoListView(ListView):
     def get_context_data(self, **kwargs):
         context = super(CertificadoListView, self).get_context_data(**kwargs)
         context['titulo_pagina'] = 'Certificados'
+
+        for certificado in context['lista_certificado']:
+            if certificado.mes_expedicion:
+                certificado.mes_expedicion = calendar.month_name[int(certificado.mes_expedicion)].capitalize()
+
         return context
 
 # Vista para los Certificados detallados

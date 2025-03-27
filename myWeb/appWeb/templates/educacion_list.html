@@ -1,11 +1,24 @@
 {% extends "base.html" %}
 
 {% block contenido %}
-    {% for ed in lista_educacion %}
-    <ul>
-        <li>Titulo: {{ ed.titulo }}</li>
-        <li>centro: {{ ed.centro }}</li>
-        <li><a href="{% url 'educacion_detail' ed.id %}">Ver</a></li>
-    </ul>
+    {% for edu in lista_educacion %}
+    <section class="secciones secciones-exp-edu">
+        {% if edu.imagen %}
+            <img class="imagen-empresa" src="{{ edu.imagen.url }}" alt="{{ edu.empresa }}">
+        {% endif %}
+        <div class="experiencia-contenido">
+            <h3>{{ edu.titulo }}</h3>
+            <ul class="lista-exp-edu">
+                <li>Centro: {{ edu.centro }}</li>
+                <li>Periodo: {{ edu.mes_inicio_nombre }} {{ edu.anio_inicio }} - {{ edu.mes_fin_nombre }} {{ edu.anio_fin }}</li>
+                <li>Descripción</li>
+                <ul>
+                    {% for punto in edu.descripcion_lista %}
+                        <li>{{ punto }}</li>
+                    {% endfor %}
+                </ul>
+            </ul>
+        </div>
+    </section>
     {% endfor %}
 {% endblock %}

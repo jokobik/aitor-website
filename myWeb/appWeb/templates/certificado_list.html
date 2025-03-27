@@ -2,10 +2,23 @@
 
 {% block contenido %}
     {% for cer in lista_certificado %}
-    <ul>
-        <li>Titulo: {{ cer.titulo }}</li>
-        <li>Emisor: {{ cer.emisor }}</li>
-        <li><a href="{% url 'certificado_detail' cer.id %}">Ver</a></li>
-    </ul>
+    <a href="{% url 'certificado_detail' cer.id %}">
+    <section class="secciones secciones-exp-edu">
+        {% if cer.imagen %}
+            <a href="{% url 'certificado_detail' cer.id %}">
+                <img class="imagen-empresa" src="{{ cer.imagen.url }}" alt="{{ cer.titulo }}">
+            </a>
+        {% endif %}
+        <div class="experiencia-contenido">
+            <h3>{{ cer.titulo }}</h3>
+            <ul class="lista-exp-edu">
+                <li>Emisor: {{ cer.emisor }}</li>
+                <li>Expedición: {{ cer.mes_expedicion }} {{ cer.anio_expedicion }}</li>
+            </ul>
+        </div>
+        <a href="{% url 'certificado_detail' cer.id %}">
+            <button style="height: 80px; width: 80px;"><p style="height: 100%; width: 100%;">📋</p></button>
+        </a>
+    </section>
     {% endfor %}
 {% endblock %}
