@@ -1,26 +1,37 @@
 {% extends "base.html" %}
 
 {% block contenido %}
-<ul>
-    <li>Titulo: {{ certificado.titulo }}</li>
+<section class="secciones">
+<div class="certificado-titulo">
+    <h3>{{ certificado.titulo }}</h3>
+    <a class="emoji-volver" href="{% url 'certificado' %}">⬅️</a>
+</div>
+<ul class="lista-exp-edu">
     <li>Expedición: {{ mes_expedicion_nombre }} {{ certificado.anio_expedicion }}</li>
 
     {% if certificado.id_credencial %}
-        <li>ID credencial: {{ certificado.id_credencial }}</li>
+        <li>ID Credencial: {{ certificado.id_credencial }}</li>
     {% endif %}
 
     {% if certificado.url %}
-        <li>Enlace: <a href="{{ certificado.url }}">Ver certificado online</a></li>
-    {% endif %}
-
-    {% if certificado.imagen %}
-        <li>Imagen: </li>
-        <img src="{{ certificado.imagen.url }}" alt="{{ certificado.titulo }} ">
+        <li>Certificado online: <a class="certificado-online" href="{{ certificado.url }}">Consultar</a></li>
     {% endif %}
 
     {% if certificado.descripcion %}
-        <li>Descripción: {{ certificado.descripcion }}</li>
+        <li>Descripción:</li>
+        <ul>
+            <ul>
+                {% for punto in certificado.descripcion_lista %}
+                    <li>{{ punto }}</li>
+                {% endfor %}
+            </ul>
+        </ul>
+    {% endif %}
+
+    {% if certificado.imagen %}
+        <br>
+        <img class="imagen-certificado" src="{{ certificado.imagen.url }}" alt="{{ certificado.titulo }} ">
     {% endif %}
 </ul>
-<a href="{% url 'certificado' %}">Volver</a>
+</section>
 {% endblock %}

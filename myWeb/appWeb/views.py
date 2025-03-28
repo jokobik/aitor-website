@@ -148,6 +148,14 @@ class CertificadoDetailView(DetailView):
         if certificado.mes_expedicion:
             context['mes_expedicion_nombre'] = calendar.month_name[int(certificado.mes_expedicion)].capitalize()
 
+        if certificado.descripcion:
+            # Divide el texto por saltos de línea y filtra puntos vacíos
+            certificado.descripcion_lista = [
+                punto.strip()
+                for punto in certificado.descripcion.split('\n')
+                if punto.strip()
+            ]
+
         return context
 
 # Vista para contactar con el desarrollador
