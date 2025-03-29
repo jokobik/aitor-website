@@ -1,11 +1,38 @@
 {% extends "base.html" %}
 
 {% block contenido %}
-    {% for pro in lista_proyecto %}
-    <ul>
-        <li>Titulo: {{ pro.titulo }}</li>
-        <li>url: {{ pro.url }}</li>
-        <li><a href="{% url 'proyecto_detail' pro.id %}">Ver</a></li>
-    </ul>
-    {% endfor %}
+<section class="secciones">
+
+</section>
+
+<style>
+    /* 🔹 Fondo principal blanco */
+    .LI-profile-badge,
+    .LI-badge-container {
+        background-color: #FFFFFF !important;
+    }
+
+    /* 🔹 Barra superior (logo + "LinkedIn") */
+    .LI-header {
+        background-color: #38434F !important; /* Fondo azul-gris */
+    }
+
+    /* 🔹 Texto y logo en blanco */
+    .LI-header svg,
+    .LI-header .LI-text {
+        fill: #FFFFFF !important; /* Logo blanco */
+        color: #FFFFFF !important; /* Texto blanco */
+    }
+
+    /* 🔹 Texto del perfil en negro (tema light ya lo hace, pero lo reforzamos) */
+    .LI-badge-container *:not(.LI-header *) {
+        color: #000000 !important;
+    }
+</style>
+
+
+<section class="secciones">
+
+
+</section>
 {% endblock %}

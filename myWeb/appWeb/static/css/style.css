@@ -210,6 +210,7 @@ ul li {
 /* ------------------- */
 
 .certificado-online {
+    line-height: 1; /* Elimina espacio vertical */
     text-decoration: none; /* Sin subrayado */
     transition: transform 0.2s ease; /* Transición para efecto hover */
 }
@@ -221,12 +222,12 @@ ul li {
     transform: scale(1.2); /* Escala el ícono al hacer hover */
 }
 
-/* Contenedor para título y emoji de volver */
+/* Contenedor para título y enlace de volver */
 .certificado-titulo {
     align-items: center; /* Centra verticalmente los elementos */
     align-self: stretch; /* Iguala la altura con el contenedor derecho */
     display: flex; /* Usa flexbox para alinear en línea */
-    justify-content: space-between; /* Separa título y emoji a los extremos */
+    justify-content: space-between; /* Separa título y enlace a los extremos */
     margin-bottom: 15px; /* Espacio inferior */
 }
 
@@ -244,31 +245,31 @@ ul li {
 }
 
 .enlace-certificado {
-    font-size: 60px; /* Tamaño del emoji */
-    margin-top: 2%; /* Margen superior */
+    font-size: 60px; /* Tamaño del enlace */
+    line-height: 1; /* Elimina espacio vertical */
     text-decoration: none; /* Elimina el subrayado del enlace */
 	height: min-content; /* Tamaño mínimo necesario */
 	transition: transform 0.2s ease; /* Transición para efecto hover */
 }
 
-/* Efecto hover para la clase .emoji-certificado */
+/* Efecto hover para la clase .enlace-certificado */
 .enlace-certificado:hover {
     transform: scale(1.2); /* Escala el ícono al hacer hover */
 }
 
-/* Estilo para el emoji de volver */
+/* Estilo para el enlace de volver */
 .enlace-volver {
-    align-items: center; /* Centra verticalmente el emoji */
+    align-items: center; /* Centra verticalmente el enlace */
     display: inline-flex; /* Contenedor flexible en línea */
-    font-size: 40px; /* Tamaño del emoji */
+    font-size: 40px; /* Tamaño del enlace */
     height: 40px; /* Altura fija para área de clic */
-    justify-content: center; /* Centra horizontalmente el emoji */
-    margin-left: 15px; /* Espacio entre título y emoji */
+    justify-content: center; /* Centra horizontalmente el enlace */
+    margin-left: 15px; /* Espacio entre título y enlace */
     transition: transform 0.2s ease; /* Transición para efecto hover */
     width: 40px; /* Ancho fijo para área de clic */
 }
 
-/* Efecto hover para la clase .emoji-volver */
+/* Efecto hover para la clase .enlace-volver */
 .enlace-volver:hover {
     transform: scale(1.2); /* Escala el ícono al hacer hover */
 }
@@ -359,6 +360,62 @@ ul li {
     font-size: 17.5px;
 }
 
+
+.linkedin-card {
+            width: 300px;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .linkedin-header {
+            background-color: #0077b5;
+            color: white;
+            padding: 15px;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .profile-content {
+            padding: 15px;
+        }
+
+        .profile-name {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .profile-title {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .profile-company {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .divider {
+            border-top: 1px solid #e6e6e6;
+            margin: 10px 0;
+        }
+
+        .view-profile {
+            color: #0077b5;
+            font-weight: 600;
+            font-size: 15px;
+            text-align: center;
+            padding: 10px 0;
+            cursor: pointer;
+        }
+
+
+
 /* ------------- */
 /* Media Queries */
 /* ------------- */
@@ -400,20 +457,20 @@ ul li {
     }
 
     .certificado-titulo {
-        flex-direction: row; /* Mantiene alineación horizontal */
         align-items: center;
+        flex-direction: row; /* Mantiene alineación horizontal */
     }
 
-    .emoji-certificado {
+    .enlace-certificado {
         display: block; /* Elimina espacio inline */
         line-height: 1; /* Elimina espacio vertical */
-        margin-top: 0px; /* Margen superior */
+        margin-top: 0; /* Margen superior */
         text-decoration: none; /* Elimina el subrayado del enlace */
         width: min-content; /* Tamaño mínimo necesario */
     }
 
-    .emoji-volver {
-        align-self: stretch; /* Iguala la altura con el emoji */
+    .enlace-volver {
+        align-self: stretch; /* Iguala la altura con el enlace */
         font-size: 20px;
         width: 35px;
         height: 35px;
