@@ -1,10 +1,11 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block contenido %}
 <section class="secciones">
 <div class="certificado-titulo">
     <h3>{{ certificado.titulo }}</h3>
-    <a class="emoji-volver" href="{% url 'certificado' %}">⬅️</a>
+    <a class="enlace-volver" href="{% url 'certificado' %}"><img class="imagen-volver" src="{% static 'images/flechavolver.png' %}"></a>
 </div>
 <ul class="lista-exp-edu">
     <li>Expedición: {{ mes_expedicion_nombre }} {{ certificado.anio_expedicion }}</li>

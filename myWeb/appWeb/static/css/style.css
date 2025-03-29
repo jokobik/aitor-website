@@ -243,21 +243,21 @@ ul li {
     padding: 0 0 0 20px;
 }
 
-.emoji-certificado {
+.enlace-certificado {
     font-size: 60px; /* Tamaño del emoji */
-    margin-top: 12.5px; /* Margen superior */
+    margin-top: 2%; /* Margen superior */
     text-decoration: none; /* Elimina el subrayado del enlace */
-	height: max-content; /* Tamaño mínimo necesario */
+	height: min-content; /* Tamaño mínimo necesario */
 	transition: transform 0.2s ease; /* Transición para efecto hover */
 }
 
 /* Efecto hover para la clase .emoji-certificado */
-.emoji-certificado:hover {
+.enlace-certificado:hover {
     transform: scale(1.2); /* Escala el ícono al hacer hover */
 }
 
 /* Estilo para el emoji de volver */
-.emoji-volver {
+.enlace-volver {
     align-items: center; /* Centra verticalmente el emoji */
     display: inline-flex; /* Contenedor flexible en línea */
     font-size: 40px; /* Tamaño del emoji */
@@ -269,7 +269,7 @@ ul li {
 }
 
 /* Efecto hover para la clase .emoji-volver */
-.emoji-volver:hover {
+.enlace-volver:hover {
     transform: scale(1.2); /* Escala el ícono al hacer hover */
 }
 
@@ -313,11 +313,19 @@ ul li {
     width: 800px;
 }
 
+.imagen-detalles {
+    height: 60px;
+}
+
 .imagen-empresa {
     flex-shrink: 0;
     max-height: 200px;
     object-fit: contain;
     width: 200px;
+}
+
+.imagen-volver {
+    height: 40px;
 }
 
 .lista-exp-edu {

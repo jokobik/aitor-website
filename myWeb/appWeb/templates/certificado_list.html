@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block contenido %}
     {% for cer in lista_certificado %}
@@ -13,8 +14,11 @@
                 <li>Expedición: {{ cer.mes_expedicion }} {{ cer.anio_expedicion }}</li>
             </ul>
         </div>
-        <a class="emoji-certificado" href="{% url 'certificado_detail' cer.id %}">
+        <!--<a class="emoji-certificado" href="{% url 'certificado_detail' cer.id %}">
             📋
+        </a>-->
+        <a class="enlace-certificado" href="{% url 'certificado_detail' cer.id %}">
+            <img class="imagen-detalles" src="{% static 'images/detallescertificado.png' %}">
         </a>
     </section>
     {% endfor %}
