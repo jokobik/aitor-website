@@ -361,61 +361,6 @@ ul li {
 }
 
 
-.linkedin-card {
-            width: 300px;
-            border-radius: 10px;
-            background-color: white;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-
-        .linkedin-header {
-            background-color: #0077b5;
-            color: white;
-            padding: 15px;
-            font-weight: 600;
-            font-size: 18px;
-        }
-
-        .profile-content {
-            padding: 15px;
-        }
-
-        .profile-name {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .profile-title {
-            font-size: 14px;
-            color: #333;
-            margin-bottom: 10px;
-            line-height: 1.4;
-        }
-
-        .profile-company {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 15px;
-        }
-
-        .divider {
-            border-top: 1px solid #e6e6e6;
-            margin: 10px 0;
-        }
-
-        .view-profile {
-            color: #0077b5;
-            font-weight: 600;
-            font-size: 15px;
-            text-align: center;
-            padding: 10px 0;
-            cursor: pointer;
-        }
-
-
-
 /* ------------- */
 /* Media Queries */
 /* ------------- */

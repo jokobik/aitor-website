@@ -1,38 +1,29 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block contenido %}
 <section class="secciones">
-
-</section>
-
-<style>
-    /* 🔹 Fondo principal blanco */
-    .LI-profile-badge,
-    .LI-badge-container {
-        background-color: #FFFFFF !important;
-    }
-
-    /* 🔹 Barra superior (logo + "LinkedIn") */
-    .LI-header {
-        background-color: #38434F !important; /* Fondo azul-gris */
-    }
-
-    /* 🔹 Texto y logo en blanco */
-    .LI-header svg,
-    .LI-header .LI-text {
-        fill: #FFFFFF !important; /* Logo blanco */
-        color: #FFFFFF !important; /* Texto blanco */
-    }
-
-    /* 🔹 Texto del perfil en negro (tema light ya lo hace, pero lo reforzamos) */
-    .LI-badge-container *:not(.LI-header *) {
-        color: #000000 !important;
-    }
-</style>
-
-
-<section class="secciones">
-
-
+    <h3>Contacta conmigo de las siguientes formas:</h3>
+    <p>Visita mi perfil de Linkedin y escribeme O descargate mi curriculum y contactame por correo electronico</p>
+    <div>
+        <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+        <div class="badge-base LI-profile-badge" data-locale="es_ES" data-size="large" data-theme="light"
+             data-type="VERTICAL" data-vanity="aitor-lopez-roncero" data-version="v1">
+            <a class="badge-base__link LI-simple-link"
+               href="https://es.linkedin.com/in/aitor-lopez-roncero?trk=profile-badge">
+            </a>
+        </div>
+    </div>
+    <div>
+        <!--Vista previa pdf-->
+        <embed
+        src="{% static 'pdfs/curriculum_aitor.pdf' %}#toolbar=0&view=FitH"
+        type="application/pdf"
+        width="300px"
+        height="400px"
+        style="border: none;"
+        />
+        <a href="{% static 'pdfs/curriculum_aitor.pdf' %}" download class="btn-descarga">Descargar CV</a>
+    </div>
 </section>
 {% endblock %}
