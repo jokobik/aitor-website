@@ -186,6 +186,12 @@ ul li {
     text-align: justify; /* Justifica el texto */
 }
 
+/* Estilos para la vista previa de curriculum */
+#pdf-canvas {
+    height: 400px; /* Altura fija para el pdf */
+    width: 300px; /* Anchura fija para el pdf */
+}
+
 #perfil-der {
     align-self: stretch; /* Iguala la altura con el contenedor izquierdo */
     flex: 2; /* Ocupa el doble de espacio que la sección izquierda */
@@ -359,6 +365,19 @@ ul li {
 .presentacion {
     font-size: 17.5px;
 }
+
+
+/* Estilos generales para los items (los divs internos) */
+.contacto-item {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center;     /* Centra el contenido verticalmente */
+    flex: 1;                 /* Hace que los divs ocupen el mismo espacio */
+    height: 250px;           /* Altura fija para que los divs se alineen bien */
+}
+
+
+
 
 
 /* ------------- */
