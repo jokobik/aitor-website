@@ -176,6 +176,21 @@ ul li {
     padding: 20px; /* Espaciado interno */
 }
 
+/* Estilos para la vista previa de curriculum */
+#pdf-canvas {
+    height: 400px; /* Altura fija para el pdf */
+    width: 300px; /* Anchura fija para el pdf */
+    display: block;
+    margin: 0 auto;
+}
+
+#perfil-der {
+    align-self: stretch; /* Iguala la altura con el contenedor izquierdo */
+    flex: 2; /* Ocupa el doble de espacio que la sección izquierda */
+    padding: 0 20px 0 20px; /* Espaciado interno */
+    text-align: justify; /* Justifica el texto */
+}
+
 #perfil-izq {
     align-self: stretch; /* Iguala la altura con el contenedor izquierdo */
     flex: 1; /* Ocupa el espacio disponible */
@@ -183,19 +198,6 @@ ul li {
     border: 1px solid #ddd; /* Borde delgado */
     border-radius: 10px; /* Bordes redondeados */
     padding: 20px; /* Espaciado interno */
-    text-align: justify; /* Justifica el texto */
-}
-
-/* Estilos para la vista previa de curriculum */
-#pdf-canvas {
-    height: 400px; /* Altura fija para el pdf */
-    width: 300px; /* Anchura fija para el pdf */
-}
-
-#perfil-der {
-    align-self: stretch; /* Iguala la altura con el contenedor izquierdo */
-    flex: 2; /* Ocupa el doble de espacio que la sección izquierda */
-    padding: 0 20px 0 20px; /* Espaciado interno */
     text-align: justify; /* Justifica el texto */
 }
 
@@ -211,9 +213,32 @@ ul li {
     margin-bottom: 0; /* Margen inferior */
 }
 
+#widget-linkedin {
+    align-self: stretch; /* Iguala la altura con el contenedor izquierdo */
+    flex: 1; /* Ocupa el espacio disponible */
+    background-color: white; /* Color de fondo */
+    border: 1px solid #ddd; /* Borde delgado */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    text-align: justify; /* Justifica el texto */
+
+}
+
+#vista-pdf {
+    align-self: stretch; /* Iguala la altura con el contenedor izquierdo */
+    flex: 2; /* Ocupa el doble de espacio que la sección izquierda */
+    padding: 0 20px 0 20px; /* Espaciado interno */
+    text-align: justify; /* Justifica el texto */}
+
 /* ------------------- */
 /* Estilos para clases */
 /* ------------------- */
+
+.btn-descarga {
+    margin-top: 15px;
+    display: inline-block;
+    text-align: center;
+}
 
 .certificado-online {
     line-height: 1; /* Elimina espacio vertical */
@@ -235,6 +260,14 @@ ul li {
     display: flex; /* Usa flexbox para alinear en línea */
     justify-content: space-between; /* Separa título y enlace a los extremos */
     margin-bottom: 15px; /* Espacio inferior */
+}
+
+/* Estilos generales para los items (los divs internos) */
+.contacto-item {
+    align-items: stretch; /* Centra el contenido verticalmente */
+    display: flex;
+    gap: 20px; /* Espacio entre los dos divs */
+    width: 100%;
 }
 
 /* Contenedor del contenido */
@@ -365,18 +398,6 @@ ul li {
 .presentacion {
     font-size: 17.5px;
 }
-
-
-/* Estilos generales para los items (los divs internos) */
-.contacto-item {
-    display: flex;
-    justify-content: center; /* Centra el contenido horizontalmente */
-    align-items: center;     /* Centra el contenido verticalmente */
-    flex: 1;                 /* Hace que los divs ocupen el mismo espacio */
-    height: 250px;           /* Altura fija para que los divs se alineen bien */
-}
-
-
 
 
 
