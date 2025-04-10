@@ -2,25 +2,31 @@
 {% load static %}
 
 {% block contenido %}
-<div id="perfil">
-    <section id="widget-linkedin" class="secciones">
-        <h3>Visita mi perfil de Linkedin y escribeme.</h3>
-        <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-        <div class="badge-base LI-profile-badge" data-locale="es_ES" data-size="large" data-theme="light"
-             data-type="VERTICAL" data-vanity="aitor-lopez-roncero" data-version="v1">
-            <a class="badge-base__link LI-simple-link"
-               href="https://es.linkedin.com/in/aitor-lopez-roncero?trk=profile-badge">
-            </a>
-        </div>
-    </section>
-    <section id="vist-pdf" class="secciones">
-        <h3>Descarga mi curriculum y contactame por correo electronico.</h3>
-        <!--Vista previa pdf-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
-        <canvas id="pdf-canvas"></canvas>
-        <script src="{% static 'js/pdf_viewer.js' %}"></script>
+<div id="contacto">
+    <div id="widget-linkedin">
+        <section>
+            <h3>Visita mi perfil de Linkedin y escribeme.</h3>
+            <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+            <div class="badge-base LI-profile-badge" data-locale="es_ES" data-size="large" data-theme="light"
+                 data-type="VERTICAL" data-vanity="aitor-lopez-roncero" data-version="v1">
+                <a class="badge-base__link LI-simple-link"
+                   href="https://es.linkedin.com/in/aitor-lopez-roncero?trk=profile-badge">
+                </a>
+            </div>
+        </section>
+    </div>
 
-        <a href="{% static 'pdfs/curriculum_aitor.pdf' %}" download class="btn-descarga">Descargar CV</a>
-    </section>
+    <div id="vista-pdf">
+        <section class="section-final secciones">
+            <h3>Descarga mi curriculum y contactame por correo electronico.</h3>
+
+            <!--Vista previa pdf-->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+            <canvas id="pdf-canvas"></canvas>
+            <script src="{% static 'js/pdf_viewer.js' %}"></script>
+
+            <a href="{% static 'pdfs/curriculum_aitor.pdf' %}" download class="btn-descarga">Descargar CV</a>
+        </section>
+    </div>
 </div>
 {% endblock %}

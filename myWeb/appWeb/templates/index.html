@@ -2,12 +2,12 @@
 {% load static %}
 
 {% block contenido %}
-
 <div id="perfil">
     <div id="perfil-izq">
         <section>
             <img id="imagen-perfil" src="{% static 'images/imagenpersonal.jpg' %}" alt="Imagen de perfil">
         </section>
+
         <section>
             <h3>Aitor López</h3>
             <p class="presentacion">
@@ -23,8 +23,8 @@
                 los conocimientos teóricos en casos prácticos.
             </p>
         </section>
-
     </div>
+
     <div id="perfil-der">
         <section class="secciones">
             <h3>Sobre mi</h3>
@@ -42,7 +42,6 @@
                 dudas para garantizar la comprensión de los estudiantes. Además, me encargué de la creación y
                 corrección de exámenes
             </p>
-
             <p>
                 🎓 Formación:
                 Soy Graduado en Industria Digital por la Universidad de Deusto, donde completé mi formación en modalidad
@@ -66,6 +65,7 @@
                 al avance tecnológico, a la transformación digital y a la enseñanza.
             </p>
         </section>
+
         <section class="secciones">
             <h3>Habilidades y Competencias:</h3>
             <ul>
@@ -78,7 +78,7 @@
                 <li>Planificación y organización.</li>
             </ul>
         </section>
-        <section id="section-final" class="secciones">
+        <section class="section-final secciones">
             <h3>Intereses</h3>
             <ul>
                 <li>Jugador de baloncesto.</li>
@@ -88,5 +88,4 @@
         </section>
     </div>
 </div>
-
 {% endblock %}

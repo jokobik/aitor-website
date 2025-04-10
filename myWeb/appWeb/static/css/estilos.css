@@ -165,15 +165,30 @@ ul li {
     max-width: 200px; /* Tamaño máximo de la imagen */
 }
 
+/* Estilos para la vista previa de curriculum */
+#pdf-canvas {
+    height: 400px; /* Altura fija para el pdf */
+    width: 300px; /* Anchura fija para el pdf */
+    display: block;
+    margin: 0 auto;
+}
+
 #perfil {
     align-self: stretch; /* Iguala la altura con el contenedor derecho */
     align-items: center; /* Centra verticalmente los elementos */
     display: flex; /* Usa Flexbox para alinear elementos */
     justify-content: space-between; /* Distribuye el espacio entre elementos */
     flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
-    max-width: 98%; /* Ancho máximo del contenedor */
+    max-width: 100%; /* Ancho máximo del contenedor */
     margin: 0 auto; /* Centra el contenedor */
     padding: 20px; /* Espaciado interno */
+}
+
+#perfil-der {
+    align-self: stretch; /* Iguala la altura con el contenedor izquierdo */
+    flex: 2; /* Ocupa el doble de espacio que la sección izquierda */
+    padding: 0 20px 0 20px; /* Espaciado interno */
+    text-align: justify; /* Justifica el texto */
 }
 
 #perfil-izq {
@@ -186,13 +201,6 @@ ul li {
     text-align: justify; /* Justifica el texto */
 }
 
-#perfil-der {
-    align-self: stretch; /* Iguala la altura con el contenedor izquierdo */
-    flex: 2; /* Ocupa el doble de espacio que la sección izquierda */
-    padding: 0 20px 0 20px; /* Espaciado interno */
-    text-align: justify; /* Justifica el texto */
-}
-
 #titulo-principal {
     font-size: 2.5rem; /* Tamaño base */
 }
@@ -201,13 +209,75 @@ ul li {
     font-size: 2rem; /* Tamaño base */
 }
 
-#section-final {
-    margin-bottom: 0; /* Margen inferior */
+
+
+#widget-linkedin {
+    align-self: stretch; /* Iguala la altura con el contenedor izquierdo */
+    flex: 1; /* Ocupa el espacio disponible */
+    background-color: white; /* Color de fondo */
+    border: 1px solid #ddd; /* Borde delgado */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    text-align: justify; /* Justifica el texto */
+
+}
+
+#vista-pdf {
+    align-self: stretch; /* Iguala la altura con el contenedor izquierdo */
+    flex: 2; /* Ocupa el doble de espacio que la sección izquierda */
+    padding: 0 20px 0 20px; /* Espaciado interno */
+    text-align: justify; /* Justifica el texto */}
+
+#contacto {
+    align-self: stretch; /* Iguala la altura con el contenedor derecho */
+    align-items: center; /* Centra verticalmente los elementos */
+    display: flex; /* Usa Flexbox para alinear elementos */
+    justify-content: space-between; /* Distribuye el espacio entre elementos */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+    max-width: 98%; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor */
+    padding: 20px; /* Espaciado interno */
 }
 
 /* ------------------- */
 /* Estilos para clases */
 /* ------------------- */
+
+.btn-descarga {
+    margin-top: 15px;
+    display: inline-block;
+    text-align: center;
+}
+
+.certificado-online {
+    line-height: 1; /* Elimina espacio vertical */
+    text-decoration: none; /* Sin subrayado */
+    transition: transform 0.2s ease; /* Transición para efecto hover */
+}
+
+.certificado-online:hover {
+    background: #3b82f6; /* Color del fondo */
+    border-radius: 7px; /* Bordes redondeados */
+    color: #ffffff; /* Texto blanco */
+    transform: scale(1.2); /* Escala el ícono al hacer hover */
+}
+
+/* Contenedor para título y enlace de volver */
+.certificado-titulo {
+    align-items: center; /* Centra verticalmente los elementos */
+    align-self: stretch; /* Iguala la altura con el contenedor derecho */
+    display: flex; /* Usa flexbox para alinear en línea */
+    justify-content: space-between; /* Separa título y enlace a los extremos */
+    margin-bottom: 15px; /* Espacio inferior */
+}
+
+/* Estilos generales para los items (los divs internos) */
+.contacto-item {
+    align-items: stretch; /* Centra el contenido verticalmente */
+    display: flex;
+    gap: 20px; /* Espacio entre los dos divs */
+    width: 100%;
+}
 
 /* Contenedor del contenido */
 .descripcion-derecha {
@@ -222,15 +292,34 @@ ul li {
     padding: 0 0 0 20px;
 }
 
-.emoji-certificado {
-    font-size: 60px; /* Tamaño del emoji */
-    margin-top: 12.5px; /* Margen superior */
+.enlace-certificado {
+    font-size: 60px; /* Tamaño del enlace */
+    line-height: 1; /* Elimina espacio vertical */
     text-decoration: none; /* Elimina el subrayado del enlace */
-	height: max-content; /* Tamaño mínimo necesario */
+	height: min-content; /* Tamaño mínimo necesario */
+	transition: transform 0.2s ease; /* Transición para efecto hover */
 }
 
-.emoji-volver {
+/* Efecto hover para la clase .enlace-certificado */
+.enlace-certificado:hover {
+    transform: scale(1.2); /* Escala el ícono al hacer hover */
+}
 
+/* Estilo para el enlace de volver */
+.enlace-volver {
+    align-items: center; /* Centra verticalmente el enlace */
+    display: inline-flex; /* Contenedor flexible en línea */
+    font-size: 40px; /* Tamaño del enlace */
+    height: 40px; /* Altura fija para área de clic */
+    justify-content: center; /* Centra horizontalmente el enlace */
+    margin-left: 15px; /* Espacio entre título y enlace */
+    transition: transform 0.2s ease; /* Transición para efecto hover */
+    width: 40px; /* Ancho fijo para área de clic */
+}
+
+/* Efecto hover para la clase .enlace-volver */
+.enlace-volver:hover {
+    transform: scale(1.2); /* Escala el ícono al hacer hover */
 }
 
 /* Estilos para la clase .icon-footer (íconos en el footer) */
@@ -273,11 +362,19 @@ ul li {
     width: 800px;
 }
 
+.imagen-detalles {
+    height: 60px;
+}
+
 .imagen-empresa {
     flex-shrink: 0;
     max-height: 200px;
     object-fit: contain;
     width: 200px;
+}
+
+.imagen-volver {
+    height: 40px;
 }
 
 .lista-exp-edu {
@@ -307,9 +404,15 @@ ul li {
     align-items: flex-start;  /* Alinea todos los items (imagen y div) arriba */
 }
 
+.section-final {
+    margin-bottom: 0; /* Margen inferior */
+}
+
 .presentacion {
     font-size: 17.5px;
 }
+
+
 
 /* ------------- */
 /* Media Queries */
@@ -351,14 +454,25 @@ ul li {
         margin-bottom: 20px;
     }
 
-    .emoji-link {
+    .certificado-titulo {
+        align-items: center;
+        flex-direction: row; /* Mantiene alineación horizontal */
+    }
+
+    .enlace-certificado {
         display: block; /* Elimina espacio inline */
         line-height: 1; /* Elimina espacio vertical */
-        margin-top: 0px; /* Margen superior */
+        margin-top: 0; /* Margen superior */
         text-decoration: none; /* Elimina el subrayado del enlace */
         width: min-content; /* Tamaño mínimo necesario */
     }
 
+    .enlace-volver {
+        align-self: stretch; /* Iguala la altura con el enlace */
+        font-size: 20px;
+        width: 35px;
+        height: 35px;
+    }
     /* Centra los íconos en el footer */
     .icon-footer {
         margin: 10px auto; /* Margen automático para centrar */
