@@ -167,12 +167,13 @@ ul li {
 
 /* Estilos para la vista previa de curriculum */
 #pdf-canvas {
-    height: 300px; /* Altura fija para el pdf */
     width: 200px; /* Anchura fija para el pdf */
     display: block;
     margin: 0 auto;
     border: 1px solid #ddd; /* Borde delgado */
     border-radius: 10px; /* Bordes redondeados */
+    flex: 1;
+    align-self: stretch; /* Iguala la altura con el contenedor izquierdo */
 }
 
 #perfil {
@@ -218,8 +219,6 @@ ul li {
     border-radius: 10px; /* Bordes redondeados */
     padding: 20px; /* Espaciado interno */
     text-align: justify; /* Justifica el texto */
-    min-width: 43%; /* Asegura que no sea más ancho que la mitad */
-    max-width: 43%; /* Limita el ancho máximo al 50% */
 }
 
 #widget-linkedin-titulo {
@@ -250,6 +249,24 @@ ul li {
     align-items: center;
     justify-content: center;
     text-align: center;
+}
+
+#icono-descargar {
+    height: 50px;
+    width: 60px;
+    flex:2;
+    align-self: stretch; /* Iguala la altura con el contenedor izquierdo */
+    padding-left: 15px;
+    margin: 0;
+}
+
+#seccion-cv {
+    display: flex;
+    align-items: flex-start;
+}
+
+#enlace-descargar {
+    margin: 0;
 }
 
 /* ------------------- */
@@ -465,6 +482,24 @@ ul li {
 
     #perfil-izq {
         margin-bottom: 20px;
+    }
+
+    #contacto {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    }
+
+    #widget-linkedin, #vista-pdf {
+        width: 100%; /* Ocupa el 100% del ancho en pantallas pequeñas */
+    }
+
+    #vista-pdf {
+        padding: 0;
+    }
+
+    #widget-linkedin {
+        margin-bottom: 20px;
+        min-width: max-content;
+        padding-right: 10px;
     }
 
     .certificado-titulo {
