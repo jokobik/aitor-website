@@ -136,7 +136,7 @@ ul li {
 
 /* Estilos para el enlace de descarga */
 #enlace-descargar {
-    margin: 0; /* Elimina el margen predeterminado */
+    margin: 5px; /* Margen personalizado */
 }
 
 /* Estilos para el elemento central del footer */
@@ -268,6 +268,15 @@ ul li {
     flex: 1; /* Ocupa el espacio disponible */
     padding: 20px; /* Espaciado interno */
     text-align: justify; /* Justifica el texto */
+}
+
+/* Estilos para la sección dentro del widget de LinkedIn */
+#widget-linkedin section {
+    display: flex; /* Convierte el elemento en un contenedor Flexbox */
+    flex-direction: column; /* Organiza los elementos en columna */
+    align-items: center; /* Centra los elementos verticalmente */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    text-align: center; /* Centra el texto horizontalmente */
 }
 
 /* Estilos para el título del widget de LinkedIn */
