@@ -1,8 +1,9 @@
 /* Importar una fuente de Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap'); /* Importa la fuente Inter de Google Fonts */
 
 /* Reset básico para todos los elementos */
 * {
+    /* Reset básico para todos los elementos */
     box-sizing: border-box; /* Incluye el padding y el borde en el ancho y alto del elemento */
     margin: 0; /* Elimina los márgenes predeterminados */
     padding: 0; /* Elimina los paddings predeterminados */
@@ -12,13 +13,13 @@
 /* Estilos para elementos */
 /* ---------------------- */
 
-/* Estilos para los enlaces */
+/* Estilos para enlaces */
 a {
     color: inherit; /* Hereda el color del elemento padre */
     text-decoration: none; /* Elimina el subrayado */
 }
 
-/* Estilos generales del cuerpo de la página */
+/* Estilos para el cuerpo de la página */
 body {
     background-color: #f4f4f4; /* Color de fondo */
     border-radius: 10px; /* Bordes redondeados */
@@ -35,36 +36,36 @@ footer {
     border-radius: 10px; /* Bordes redondeados */
     color: white; /* Color del texto */
     display: flex; /* Usa Flexbox para alinear elementos */
-    justify-content: space-between; /* Distribuye el espacio entre elementos */
     flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+    justify-content: space-between; /* Distribuye el espacio entre elementos */
     padding: 20px 0; /* Espaciado interno */
     width: 100%; /* Ancho completo */
 }
 
-/* Estilos para los enlaces dentro de h1 */
+/* Estilos para enlaces dentro de h1 */
 h1 a {
     color: white; /* Color del texto */
     text-decoration: none; /* Sin subrayado */
     transition: color 0.3s ease; /* Transición suave para el color */
 }
 
-/* Estilos para los encabezados */
+/* Estilos para encabezados h3 */
 h3 {
-    font-size: 24px; /* Tamaño de fuente */
     color: #222; /* Color del texto */
+    font-size: 24px; /* Tamaño de fuente */
     margin-bottom: 10px; /* Margen inferior */
 }
 
 /* Estilos para el encabezado */
 header {
+    align-items: center; /* Centra verticalmente los elementos */
     background-color: #222; /* Color de fondo */
     border-top-left-radius: 10px; /* Borde superior izquierdo redondeado */
     border-top-right-radius: 10px; /* Borde superior derecho redondeado */
     color: white; /* Color del texto */
     display: flex; /* Usa Flexbox para alinear elementos */
-    justify-content: space-between; /* Distribuye el espacio entre elementos */
-    align-items: center; /* Centra verticalmente los elementos */
     flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+    justify-content: space-between; /* Distribuye el espacio entre elementos */
     padding: 10px 0; /* Espaciado interno */
     width: 100%; /* Ancho completo */
 }
@@ -85,7 +86,7 @@ main {
     width: 99%; /* Ancho relativo */
 }
 
-/* Estilos para el nav */
+/* Estilos para la barra de navegación */
 nav {
     align-items: center; /* Centra verticalmente los div */
     background-color: #222; /* Color de fondo */
@@ -96,24 +97,25 @@ nav {
     padding: 10px 0; /* Espaciado interno */
 }
 
-/* Estilos para los párrafos */
+/* Estilos para párrafos */
 p {
+    color: #333; /* Color del texto */
     font-size: 16px; /* Tamaño de fuente */
     line-height: 1.6; /* Altura de línea */
-    color: #333; /* Color del texto */
     margin-bottom: 15px; /* Margen inferior */
 }
 
-/* Estilos para las listas */
+/* Estilos para listas no ordenadas */
 ul {
     list-style-type: disc; /* Tipo de viñeta */
     margin-left: 20px; /* Margen izquierdo */
 }
 
+/* Estilos para elementos de lista */
 ul li {
+    color: #333; /* Color del texto */
     font-size: 16px; /* Tamaño de fuente */
     line-height: 1.6; /* Altura de línea */
-    color: #333; /* Color del texto */
     margin-bottom: 10px; /* Margen inferior */
 }
 
@@ -121,170 +123,177 @@ ul li {
 /* Estilos para IDs */
 /* ---------------- */
 
-/* Estilos para el elemento con ID #fcer */
+/* Estilos para el contenedor de contacto */
+#contacto {
+    align-items: center; /* Centra verticalmente los elementos */
+    align-self: stretch; /* Iguala la altura con el contenedor derecho */
+    display: flex; /* Usa Flexbox para alinear elementos */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+    justify-content: space-between; /* Distribuye el espacio entre elementos */
+    margin: 0 auto; /* Centra el contenedor */
+    max-width: 100%; /* Ancho máximo del contenedor */
+}
+
+/* Estilos para el enlace de descarga */
+#enlace-descargar {
+    margin: 0; /* Elimina el margen predeterminado */
+}
+
+/* Estilos para el elemento central del footer */
 #fcer {
     flex: 1; /* Ocupa el espacio disponible */
     padding: 10px; /* Espaciado interno */
     text-align: center; /* Alineación del texto */
 }
 
-/* Estilos para el elemento con ID #fder */
+/* Estilos para el elemento derecho del footer */
 #fder {
     flex: 1; /* Ocupa el espacio disponible */
     padding: 10px; /* Espaciado interno */
     text-align: right; /* Alineación del texto a la derecha */
 }
 
-/* Estilos para el elemento con ID #fizq */
+/* Estilos para el elemento izquierdo del footer */
 #fizq {
     flex: 1; /* Ocupa el espacio disponible */
     padding: 10px; /* Espaciado interno */
     text-align: left; /* Alineación del texto a la izquierda */
 }
 
-/* Estilos para el elemento con ID #hder */
+/* Estilos para el elemento derecho del header */
 #hder {
     flex: 1; /* Ocupa el espacio disponible */
     padding: 10px; /* Espaciado interno */
     text-align: right; /* Alineación del texto a la derecha */
 }
 
-/* Estilos para el elemento con ID #hizq */
+/* Estilos para el elemento izquierdo del header */
 #hizq {
     flex: 1; /* Ocupa el espacio disponible */
     padding: 10px; /* Espaciado interno */
     text-align: left; /* Alineación del texto a la izquierda */
 }
 
+/* Estilos para la imagen de perfil */
 #imagen-perfil {
     border-radius: 50%; /* Bordes redondeados */
     display: block; /* Convierte la imagen en un bloque */
     height: 200px; /* Ajusta la altura de la imagen */
     margin: 0 auto 20px; /* Centra la imagen y añade margen inferior */
-    width: 100%; /* Ajusta el ancho de la imagen */
     max-width: 200px; /* Tamaño máximo de la imagen */
+    width: 100%; /* Ajusta el ancho de la imagen */
 }
 
-/* Estilos para la vista previa de curriculum */
+/* Estilos para el icono de descarga */
+#icono-descargar {
+    align-self: stretch; /* Iguala la altura con el contenedor izquierdo */
+    flex: 2; /* Ocupa el doble de espacio */
+    height: 50px; /* Altura del icono */
+    margin: 0; /* Elimina el margen predeterminado */
+    padding-left: 15px; /* Espaciado interno izquierdo */
+    width: 60px; /* Ancho del icono */
+}
+
+/* Estilos para el canvas del PDF */
 #pdf-canvas {
-    width: 200px; /* Anchura fija para el pdf */
-    display: block;
-    margin: 0 auto;
+    align-self: stretch; /* Iguala la altura con el contenedor izquierdo */
     border: 1px solid #ddd; /* Borde delgado */
     border-radius: 10px; /* Bordes redondeados */
-    flex: 1;
-    align-self: stretch; /* Iguala la altura con el contenedor izquierdo */
+    display: block; /* Convierte el canvas en un bloque */
+    flex: 1; /* Ocupa el espacio disponible */
+    margin: 0 auto; /* Centra el canvas */
+    width: 200px; /* Anchura fija para el pdf */
 }
 
+/* Estilos para el contenedor del perfil */
 #perfil {
-    align-self: stretch; /* Iguala la altura con el contenedor derecho */
     align-items: center; /* Centra verticalmente los elementos */
+    align-self: stretch; /* Iguala la altura con el contenedor derecho */
     display: flex; /* Usa Flexbox para alinear elementos */
-    justify-content: space-between; /* Distribuye el espacio entre elementos */
     flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
-    max-width: 100%; /* Ancho máximo del contenedor */
+    justify-content: space-between; /* Distribuye el espacio entre elementos */
     margin: 0 auto; /* Centra el contenedor */
+    max-width: 100%; /* Ancho máximo del contenedor */
 }
 
+/* Estilos para la sección derecha del perfil */
 #perfil-der {
     align-self: stretch; /* Iguala la altura con el contenedor izquierdo */
     flex: 2; /* Ocupa el doble de espacio que la sección izquierda */
-    padding: 0 0 0 20px; /* Espaciado interno */
+    padding: 0 0 0 20px; /* Espaciado interno izquierdo */
     text-align: justify; /* Justifica el texto */
 }
 
+/* Estilos para la sección izquierda del perfil */
 #perfil-izq {
     align-self: stretch; /* Iguala la altura con el contenedor izquierdo */
-    flex: 1; /* Ocupa el espacio disponible */
     background-color: white; /* Color de fondo */
     border: 1px solid #ddd; /* Borde delgado */
     border-radius: 10px; /* Bordes redondeados */
+    flex: 1; /* Ocupa el espacio disponible */
     padding: 20px; /* Espaciado interno */
     text-align: justify; /* Justifica el texto */
 }
 
+/* Estilos para la sección del currículum */
+#seccion-cv {
+    align-items: flex-start; /* Alinea los elementos al inicio */
+    display: flex; /* Usa Flexbox para alinear elementos */
+}
+
+/* Estilos para el título principal */
 #titulo-principal {
-    font-size: 2.5rem; /* Tamaño base */
+    font-size: 2.5rem; /* Tamaño de fuente */
 }
 
+/* Estilos para el título secundario */
 #titulo-secundario{
-    font-size: 2rem; /* Tamaño base */
+    font-size: 2rem; /* Tamaño de fuente */
 }
 
-#widget-linkedin {
-    align-self: stretch; /* Iguala la altura con el contenedor izquierdo */
-    flex: 1; /* Ocupa el espacio disponible */
-    background-color: white; /* Color de fondo */
-    border: 1px solid #ddd; /* Borde delgado */
-    border-radius: 10px; /* Bordes redondeados */
-    padding: 20px; /* Espaciado interno */
-    text-align: justify; /* Justifica el texto */
-}
-
-#widget-linkedin-titulo {
-    min-width: max-content;
-}
-
+/* Estilos para la vista del PDF */
 #vista-pdf {
     align-self: stretch; /* Iguala la altura con el contenedor izquierdo */
     flex: 2; /* Ocupa el doble de espacio que la sección izquierda */
-    padding: 0 0 0 20px; /* Espaciado interno */
+    padding: 0 0 0 20px; /* Espaciado interno izquierdo */
     text-align: justify; /* Justifica el texto */
 }
 
-#contacto {
-    align-self: stretch; /* Iguala la altura con el contenedor derecho */
-    align-items: center; /* Centra verticalmente los elementos */
-    display: flex; /* Usa Flexbox para alinear elementos */
-    justify-content: space-between; /* Distribuye el espacio entre elementos */
-    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
-    max-width: 100%; /* Ancho máximo del contenedor */
-    margin: 0 auto; /* Centra el contenedor */
-}
-
-/* Añade esto al final de tu archivo CSS */
-#widget-linkedin section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-#icono-descargar {
-    height: 50px;
-    width: 60px;
-    flex:2;
+/* Estilos para el widget de LinkedIn */
+#widget-linkedin {
     align-self: stretch; /* Iguala la altura con el contenedor izquierdo */
-    padding-left: 15px;
-    margin: 0;
+    background-color: white; /* Color de fondo */
+    border: 1px solid #ddd; /* Borde delgado */
+    border-radius: 10px; /* Bordes redondeados */
+    flex: 1; /* Ocupa el espacio disponible */
+    padding: 20px; /* Espaciado interno */
+    text-align: justify; /* Justifica el texto */
 }
 
-#seccion-cv {
-    display: flex;
-    align-items: flex-start;
-}
-
-#enlace-descargar {
-    margin: 0;
+/* Estilos para el título del widget de LinkedIn */
+#widget-linkedin-titulo {
+    min-width: max-content; /* Ancho mínimo necesario */
 }
 
 /* ------------------- */
 /* Estilos para clases */
 /* ------------------- */
 
+/* Estilos para botones de descarga */
 .btn-descarga {
-    margin-top: 15px;
-    display: inline-block;
-    text-align: center;
+    display: inline-block; /* Convierte el botón en un elemento en línea */
+    margin-top: 15px; /* Margen superior */
+    text-align: center; /* Alineación del texto */
 }
 
+/* Estilos para certificados en línea */
 .certificado-online {
     line-height: 1; /* Elimina espacio vertical */
     text-decoration: none; /* Sin subrayado */
     transition: transform 0.2s ease; /* Transición para efecto hover */
 }
 
+/* Estilos para el hover de certificados en línea */
 .certificado-online:hover {
     background: #3b82f6; /* Color del fondo */
     border-radius: 7px; /* Bordes redondeados */
@@ -292,50 +301,45 @@ ul li {
     transform: scale(1.2); /* Escala el ícono al hacer hover */
 }
 
-/* Contenedor para título y enlace de volver */
+/* Estilos para el título del certificado */
 .certificado-titulo {
     align-items: center; /* Centra verticalmente los elementos */
     align-self: stretch; /* Iguala la altura con el contenedor derecho */
-    display: flex; /* Usa flexbox para alinear en línea */
+    display: flex; /* Usa Flexbox para alinear en línea */
     justify-content: space-between; /* Separa título y enlace a los extremos */
     margin-bottom: 15px; /* Espacio inferior */
 }
 
-/* Estilos generales para los items (los divs internos) */
+/* Estilos para elementos de contacto */
 .contacto-item {
     align-items: stretch; /* Centra el contenido verticalmente */
-    display: flex;
+    display: flex; /* Usa Flexbox para alinear elementos */
     gap: 20px; /* Espacio entre los dos divs */
-    width: 100%;
+    width: 100%; /* Ancho completo */
 }
 
-/* Contenedor del contenido */
+/* Estilos para la descripción derecha */
 .descripcion-derecha {
-    text-align: left;
-    padding-left: 15px;
-    border-left: 1px solid #eee;
+    border-left: 1px solid #eee; /* Borde izquierdo delgado */
+    padding-left: 15px; /* Espaciado interno izquierdo */
+    text-align: left; /* Alineación del texto a la izquierda */
 }
 
-/* Contenedor del contenido */
-.experiencia-contenido {
-    flex: 1;
-    padding: 0 0 0 20px;
-}
-
+/* Estilos para el enlace del certificado */
 .enlace-certificado {
     font-size: 60px; /* Tamaño del enlace */
+    height: min-content; /* Tamaño mínimo necesario */
     line-height: 1; /* Elimina espacio vertical */
     text-decoration: none; /* Elimina el subrayado del enlace */
-	height: min-content; /* Tamaño mínimo necesario */
-	transition: transform 0.2s ease; /* Transición para efecto hover */
+    transition: transform 0.2s ease; /* Transición para efecto hover */
 }
 
-/* Efecto hover para la clase .enlace-certificado */
+/* Estilos para el hover del enlace del certificado */
 .enlace-certificado:hover {
     transform: scale(1.2); /* Escala el ícono al hacer hover */
 }
 
-/* Estilo para el enlace de volver */
+/* Estilos para el enlace de volver */
 .enlace-volver {
     align-items: center; /* Centra verticalmente el enlace */
     display: inline-flex; /* Contenedor flexible en línea */
@@ -347,12 +351,18 @@ ul li {
     width: 40px; /* Ancho fijo para área de clic */
 }
 
-/* Efecto hover para la clase .enlace-volver */
+/* Estilos para el hover del enlace de volver */
 .enlace-volver:hover {
     transform: scale(1.2); /* Escala el ícono al hacer hover */
 }
 
-/* Estilos para la clase .icon-footer (íconos en el footer) */
+/* Estilos para el contenido de la experiencia */
+.experiencia-contenido {
+    flex: 1; /* Ocupa el espacio disponible */
+    padding: 0 0 0 20px; /* Espaciado interno izquierdo */
+}
+
+/* Estilos para íconos del pie de página */
 .icon-footer {
     border-radius: 15%; /* Bordes redondeados */
     height: 40px; /* Altura */
@@ -361,12 +371,37 @@ ul li {
     width: 40px; /* Ancho */
 }
 
-/* Efecto hover para la clase .icon-footer */
+/* Estilos para el hover de íconos del pie de página */
 .icon-footer:hover {
     transform: scale(1.2); /* Escala el ícono al hacer hover */
 }
 
-/* Estilos para los elementos en línea */
+/* Estilos para la imagen del certificado */
+.imagen-certificado {
+    max-height: 800px; /* Altura máxima */
+    object-fit: contain; /* Ajusta la imagen manteniendo su relación de aspecto */
+    width: 800px; /* Ancho */
+}
+
+/* Estilos para la imagen de detalles */
+.imagen-detalles {
+    height: 60px; /* Altura */
+}
+
+/* Estilos para la imagen de la empresa */
+.imagen-empresa {
+    flex-shrink: 0; /* No permite que la imagen se reduzca */
+    max-height: 200px; /* Altura máxima */
+    object-fit: contain; /* Ajusta la imagen manteniendo su relación de aspecto */
+    width: 200px; /* Ancho */
+}
+
+/* Estilos para la imagen de volver */
+.imagen-volver {
+    height: 40px; /* Altura */
+}
+
+/* Estilos para elementos en línea */
 .inline-element {
     display: inline-block; /* Hace que los elementos estén en línea */
     margin: 0; /* Elimina el margen predeterminado */
@@ -374,50 +409,37 @@ ul li {
     transition: transform 0.3s ease; /* Transición suave para el efecto hover */
 }
 
-/* Estilos para los enlaces dentro de h2 */
+/* Estilos para enlaces en elementos en línea */
 .inline-element a {
     color: white; /* Color del texto */
     text-decoration: none; /* Sin subrayado */
 }
 
-/* Efecto hover para los enlaces */
+/* Estilos para el hover de elementos en línea */
 .inline-element:hover {
+    transform: scale(1.3); /* Escala el ícono al hacer hover */
     transition: transform 0.3s ease; /* Transición suave para el efecto hover */
-    transform: scale(1.3);
 }
 
-.imagen-certificado {
-    max-height: 800px;
-    object-fit: contain;
-    width: 800px;
-}
-
-.imagen-detalles {
-    height: 60px;
-}
-
-.imagen-empresa {
-    flex-shrink: 0;
-    max-height: 200px;
-    object-fit: contain;
-    width: 200px;
-}
-
-.imagen-volver {
-    height: 40px;
-}
-
+/* Estilos para listas de experiencia y educación */
 .lista-exp-edu {
-    list-style-type: none;
-    padding-left: 0;
-    margin-top: 10px;
+    list-style-type: none; /* Elimina las viñetas */
+    margin-top: 10px; /* Margen superior */
+    padding-left: 0; /* Elimina el padding izquierdo */
 }
 
+/* Estilos para elementos de la lista de experiencia */
 .lista-experiencia li {
-    margin-bottom: 8px;
-    line-height: 1.5;
+    line-height: 1.5; /* Altura de línea */
+    margin-bottom: 8px; /* Margen inferior */
 }
 
+/* Estilos para la presentación */
+.presentacion {
+    font-size: 17.5px; /* Tamaño de fuente */
+}
+
+/* Estilos para secciones generales */
 .secciones {
     background-color: white; /* Color de fondo */
     border: 1px solid #ddd; /* Borde delgado */
@@ -429,84 +451,85 @@ ul li {
     width: 100%; /* Ocupa el 100% del ancho del contenedor padre */
 }
 
+/* Estilos para secciones de experiencia y educación */
 .secciones-exp-edu {
-    display: flex;
     align-items: flex-start;  /* Alinea todos los items (imagen y div) arriba */
+    display: flex; /* Usa Flexbox para alinear elementos */
 }
 
+/* Estilos para la sección final */
 .section-final {
     margin-bottom: 0; /* Margen inferior */
 }
-
-.presentacion {
-    font-size: 17.5px;
-}
-
-
 
 /* ------------- */
 /* Media Queries */
 /* ------------- */
 
-/* Estilos para pantallas con un ancho máximo de 600px */
+/* Estilos para pantallas con ancho máximo de 600px */
 @media (max-width: 600px) {
 
+    /* Estilos para el pie de página en pantallas pequeñas */
+    footer {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+        text-align: center; /* Alineación del texto */
+    }
+
+    /* Estilos para la barra de navegación en pantallas pequeñas */
     nav {
         flex-direction: column; /* Cambia a columna en pantallas pequeñas */
         gap: 10px; /* Espacio entre los contenedores */
     }
 
-    /* Cambia la dirección del footer a columna */
-    footer {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    /* Ajustes para los elementos dentro del footer */
-    #fizq, #fder, #fcer {
-        margin-bottom: 10px; /* Margen inferior */
-        text-align: center; /* Alineación del texto */
-    }
-
-    #perfil {
-        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
-    }
-
-    #perfil-izq, #perfil-der {
-        width: 100%; /* Ocupa el 100% del ancho en pantallas pequeñas */
-    }
-
-    #perfil-der {
-        padding: 0;
-    }
-
-    #perfil-izq {
-        margin-bottom: 20px;
-    }
-
+    /* Estilos para el contenedor de contacto en pantallas pequeñas */
     #contacto {
         flex-direction: column; /* Cambia a columna en pantallas pequeñas */
     }
 
-    #widget-linkedin, #vista-pdf {
-        width: 100%; /* Ocupa el 100% del ancho en pantallas pequeñas */
+    /* Estilos para los elementos del footer en pantallas pequeñas */
+    #fcer, #fder, #fizq {
+        margin-bottom: 10px; /* Margen inferior */
+        text-align: center; /* Alineación del texto */
     }
 
+    /* Estilos para el contenedor del perfil en pantallas pequeñas */
+    #perfil {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    }
+
+    /* Estilos para la sección derecha del perfil en pantallas pequeñas */
+    #perfil-der {
+        padding: 0; /* Elimina el padding */
+        width: 100%; /* Ocupa el 100% del ancho */
+    }
+
+    /* Estilos para la sección izquierda del perfil en pantallas pequeñas */
+    #perfil-izq {
+        margin-bottom: 20px; /* Margen inferior */
+        width: 100%; /* Ocupa el 100% del ancho */
+    }
+
+    /* Estilos para la vista del PDF en pantallas pequeñas */
     #vista-pdf {
-        padding: 0;
+        padding: 0; /* Elimina el padding */
+        width: 100%; /* Ocupa el 100% del ancho */
     }
 
+    /* Estilos para el widget de LinkedIn en pantallas pequeñas */
     #widget-linkedin {
-        margin-bottom: 20px;
-        min-width: max-content;
-        padding-right: 10px;
+        margin-bottom: 20px; /* Margen inferior */
+        min-width: max-content; /* Ancho mínimo necesario */
+        padding-right: 10px; /* Espaciado interno derecho */
+        width: 100%; /* Ocupa el 100% del ancho */
     }
 
+    /* Estilos para el título del certificado en pantallas pequeñas */
     .certificado-titulo {
-        align-items: center;
+        align-items: center; /* Centra verticalmente los elementos */
         flex-direction: row; /* Mantiene alineación horizontal */
     }
 
+    /* Estilos para el enlace del certificado en pantallas pequeñas */
     .enlace-certificado {
         display: block; /* Elimina espacio inline */
         line-height: 1; /* Elimina espacio vertical */
@@ -515,29 +538,34 @@ ul li {
         width: min-content; /* Tamaño mínimo necesario */
     }
 
+    /* Estilos para el enlace de volver en pantallas pequeñas */
     .enlace-volver {
         align-self: stretch; /* Iguala la altura con el enlace */
-        font-size: 20px;
-        width: 35px;
-        height: 35px;
+        font-size: 20px; /* Tamaño de fuente */
+        height: 35px; /* Altura */
+        width: 35px; /* Ancho */
     }
-    /* Centra los íconos en el footer */
+
+    /* Estilos para los íconos del pie de página en pantallas pequeñas */
     .icon-footer {
         margin: 10px auto; /* Margen automático para centrar */
     }
 
+    /* Estilos para la imagen del certificado en pantallas pequeñas */
     .imagen-certificado {
-        max-height: 400px;
-        width: 100%;
+        max-height: 400px; /* Altura máxima */
+        width: 100%; /* Ocupa el 100% del ancho */
     }
 
+    /* Estilos para la imagen de la empresa en pantallas pequeñas */
     .imagen-empresa {
-        width: 100%;
-        max-width: 200px;
-        margin-bottom: 15px;
+        margin-bottom: 15px; /* Margen inferior */
+        max-width: 200px; /* Ancho máximo */
+        width: 100%; /* Ocupa el 100% del ancho */
     }
 
+    /* Estilos para la sección de experiencia en pantallas pequeñas */
     .seccion-experiencia {
-        flex-direction: column;
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
     }
 }
