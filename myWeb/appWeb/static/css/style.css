@@ -167,10 +167,12 @@ ul li {
 
 /* Estilos para la vista previa de curriculum */
 #pdf-canvas {
-    height: 400px; /* Altura fija para el pdf */
-    width: 300px; /* Anchura fija para el pdf */
+    height: 300px; /* Altura fija para el pdf */
+    width: 200px; /* Anchura fija para el pdf */
     display: block;
     margin: 0 auto;
+    border: 1px solid #ddd; /* Borde delgado */
+    border-radius: 10px; /* Bordes redondeados */
 }
 
 #perfil {
@@ -216,7 +218,12 @@ ul li {
     border-radius: 10px; /* Bordes redondeados */
     padding: 20px; /* Espaciado interno */
     text-align: justify; /* Justifica el texto */
+    min-width: 43%; /* Asegura que no sea más ancho que la mitad */
+    max-width: 43%; /* Limita el ancho máximo al 50% */
+}
 
+#widget-linkedin-titulo {
+    min-width: max-content;
 }
 
 #vista-pdf {
@@ -234,6 +241,15 @@ ul li {
     flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
     max-width: 100%; /* Ancho máximo del contenedor */
     margin: 0 auto; /* Centra el contenedor */
+}
+
+/* Añade esto al final de tu archivo CSS */
+#widget-linkedin section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 /* ------------------- */
