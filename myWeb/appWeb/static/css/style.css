@@ -366,7 +366,7 @@ ul li {
 }
 
 /* Estilos para el contenido de la experiencia */
-.experiencia-contenido {
+.exp-edu-contenido {
     flex: 1; /* Ocupa el espacio disponible */
     padding: 0 0 0 20px; /* Espaciado interno izquierdo */
 }
@@ -573,8 +573,42 @@ ul li {
         width: 100%; /* Ocupa el 100% del ancho */
     }
 
-    /* Estilos para la sección de experiencia en pantallas pequeñas */
-    .seccion-experiencia {
+
+
+    /* Estilos para el contenido de la experiencia */
+    .exp-edu-contenido {
+        display: flex; /* Usa Flexbox para alinear elementos */
+        flex: 1; /* Ocupa el espacio disponible */
+        flex-direction: column; /* Organiza los elementos en columna */
+        margin: 0; /* Elimina el margen */
+        overflow-wrap: break-word; /* Permite que las palabras largas se rompan */
+        padding: 0; /* Elimina el padding */
+    }
+
+    /* Estilos para el contenedor de la información */
+    .exp-edu-info {
+        width: 100%; /* Ocupa el 100% del ancho */
+    }
+
+    /* Estilos para la imagen de la empresa en pantallas pequeñas */
+    .imagen-empresa {
+        margin-bottom: 15px; /* Margen inferior */
+        max-width: 200px; /* Ancho máximo */
+        width: 100%; /* Ocupa el 100% del ancho */
+    }
+
+    /* Estilos para la lista de experiencia y educación */
+    .lista-exp-edu {
+        margin: 0; /* Elimina el margen */
+        padding: 0; /* Elimina el padding */
+        width: 100%; /* Ocupa el 100% del ancho */
+        word-break: break-word; /* Fuerza la ruptura de palabras largas */
+    }
+
+    /* Estilos para secciones de experiencia y educación en pantallas pequeñas */
+    .secciones-exp-edu {
+        align-items: flex-start; /* Alinea los elementos al inicio */
+        display: flex; /* Usa Flexbox para alinear elementos */
         flex-direction: column; /* Cambia a columna en pantallas pequeñas */
     }
 }

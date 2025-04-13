@@ -6,18 +6,26 @@
         {% if exp.imagen %}
             <img class="imagen-empresa" src="{{ exp.imagen.url }}" alt="{{ exp.empresa }}">
         {% endif %}
-        <div class="experiencia-contenido">
+        <div class="exp-edu-contenido">
             <h3>{{ exp.puesto }}</h3>
-            <ul class="lista-exp-edu">
-                <li>Empresa: {{ exp.empresa }}</li>
-                <li>Periodo: {{ exp.mes_inicio_nombre }} {{ exp.anio_inicio }} - {{ exp.mes_fin_nombre }} {{ exp.anio_fin }}</li>
-                <li>Descripción:</li>
-                <ul>
-                    {% for punto in exp.descripcion_lista %}
-                        <li>{{ punto }}</li>
-                    {% endfor %}
+            <div class="exp-edu-info">
+                <ul class="lista-exp-edu">
+                    <li>Empresa: {{ exp.empresa }}</li>
+
+                    {% if exp.anio_fin %}
+                        <li>Periodo: {{ exp.mes_inicio_nombre }} {{ exp.anio_inicio }} - {{ exp.mes_fin_nombre }} {{ exp.anio_fin }}</li>
+                    {% else %}
+                        <li>Periodo: {{ exp.mes_inicio_nombre }} {{ exp.anio_inicio }} - Actualidad</li>
+                    {% endif %}
+
+                    <li>Descripción:</li>
+                    <ul>
+                        {% for punto in exp.descripcion_lista %}
+                            <li>{{ punto }}</li>
+                        {% endfor %}
+                    </ul>
                 </ul>
-            </ul>
+            </div>
         </div>
     </section>
     {% endfor %}

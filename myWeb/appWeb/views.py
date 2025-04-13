@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.views.generic import DetailView, ListView
 from django.http import HttpResponse
 from .models import Experiencia, Educacion, Certificado, Contacto
+from django.db.models import Case, When, Value, BooleanField
 import calendar
 import locale
 
@@ -25,8 +26,18 @@ def index(request):
 class ExperienciaListView(ListView):
     model = Experiencia
     template_name = 'experiencia_list.html'
-    # - se usa para hacer el orden inverso
-    queryset = Experiencia.objects.order_by('-anio_inicio', '-mes_inicio')
+
+    #queryset = Experiencia.objects.order_by('anio_fin', '-anio_inicio', '-mes_inicio')
+    queryset = Experiencia.objects.order_by(
+        Case(
+            When(anio_fin__isnull=True, then=Value(0)),
+            default=Value(1),
+            output_field=BooleanField()
+        ),
+        # - se usa para hacer el orden inverso
+        '-anio_inicio',
+        '-mes_inicio'
+    )
     context_object_name = 'lista_experiencia'
 
     def get_context_data(self, **kwargs):
@@ -71,8 +82,18 @@ class ExperienciaDetailView(DetailView):
 class EducacionListView(ListView):
     model = Educacion
     template_name = 'educacion_list.html'
-    # - se usa para hacer el orden inverso
-    queryset = Educacion.objects.order_by('-anio_inicio', '-mes_inicio')
+
+    #queryset = Educacion.objects.order_by('-anio_inicio', '-mes_inicio')
+    queryset = Educacion.objects.order_by(
+        Case(
+            When(anio_fin__isnull=True, then=Value(0)),
+            default=Value(1),
+            output_field=BooleanField()
+        ),
+        # - se usa para hacer el orden inverso
+        '-anio_inicio',
+        '-mes_inicio'
+    )
     context_object_name = 'lista_educacion'
 
     def get_context_data(self, **kwargs):
