@@ -20,7 +20,7 @@
 
     {% if certificado.descripcion %}
         <li>Descripción:</li>
-        <ul>
+        <ul class="lista-descripcion">
             <ul>
                 {% for punto in certificado.descripcion_lista %}
                     <li>{{ punto }}</li>

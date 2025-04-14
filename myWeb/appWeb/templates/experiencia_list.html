@@ -19,10 +19,12 @@
                     {% endif %}
 
                     <li>Descripción:</li>
-                    <ul>
-                        {% for punto in exp.descripcion_lista %}
-                            <li>{{ punto }}</li>
-                        {% endfor %}
+                    <ul class="lista-descripcion">
+                        <ul>
+                            {% for punto in exp.descripcion_lista %}
+                                <li>{{ punto }}</li>
+                            {% endfor %}
+                        </ul>
                     </ul>
                 </ul>
             </div>
