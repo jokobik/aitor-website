@@ -1,1 +1,0 @@
-web: gunicorn myWeb.myWeb.wsgi
