@@ -10,7 +10,8 @@ import locale
 # Create your views here.
 
 # Forzar locaclizacion a España en Windows
-locale.setlocale(locale.LC_TIME, 'Spanish_Spain.1252')
+#locale.setlocale(locale.LC_TIME, 'Spanish_Spain.1252')
+locale.setlocale(locale.LC_TIME, 'es_ES.UTF-8')
 
 # Vista principal de la web
 def index(request):
