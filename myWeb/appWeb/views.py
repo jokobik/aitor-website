@@ -62,24 +62,6 @@ class ExperienciaListView(ListView):
                 ]
         return context
 
-# Vista para la Experiencia detallada
-class ExperienciaDetailView(DetailView):
-    model = Experiencia
-    template_name = 'experiencia_detail.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(ExperienciaDetailView, self).get_context_data(**kwargs)
-        context['titulo_pagina'] = 'Detalles del puesto'
-
-        # Obtiene la instancia actual de Experiencia
-        experiencia = self.object
-        # Convertir mes_inicio (asumiendo que es un número) a su nombre
-        if experiencia.mes_inicio:
-            context['mes_inicio_nombre'] = calendar.month_name[int(experiencia.mes_inicio)].capitalize()
-            context['mes_fin_nombre'] = calendar.month_name[int(experiencia.mes_fin)].capitalize()
-
-        return context
-
 # Vista para la Educación
 class EducacionListView(ListView):
     model = Educacion
@@ -117,24 +99,6 @@ class EducacionListView(ListView):
                     if punto.strip()
                 ]
         return context
-
-        return context
-
-# Vista para la Educación detallada
-class EducacionDetailView(DetailView):
-    model = Educacion
-    template_name = 'educacion_detail.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(EducacionDetailView, self).get_context_data(**kwargs)
-        context['titulo_pagina'] = 'Detalles del titulo'
-
-        # Obtiene la instancia actual de Educacion
-        educacion = self.object
-        # Convertir mes_inicio (asumiendo que es un número) a su nombre
-        if educacion.mes_inicio:
-            context['mes_inicio_nombre'] = calendar.month_name[int(educacion.mes_inicio)].capitalize()
-            context['mes_fin_nombre'] = calendar.month_name[int(educacion.mes_fin)].capitalize()
 
         return context
 

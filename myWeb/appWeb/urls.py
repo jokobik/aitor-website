@@ -9,11 +9,9 @@ urlpatterns = [
 
     # Urls para experiencia
     path('experiencia', views.ExperienciaListView.as_view(), name='experiencia'),
-    path('experiencia/<int:pk>', views.ExperienciaDetailView.as_view(), name='experiencia_detail'),
 
     # Urls para educacion
     path('educacion', views.EducacionListView.as_view(), name='educacion'),
-    path('educacion/<int:pk>', views.EducacionDetailView.as_view(), name='educacion_detail'),
 
     # Urls para certificados
     path('certificados', views.CertificadoListView.as_view(), name='certificado'),
