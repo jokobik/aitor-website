@@ -11,7 +11,8 @@ import locale
 
 # Forzar locaclizacion a España en Windows
 #locale.setlocale(locale.LC_TIME, 'Spanish_Spain.1252')
-locale.setlocale(locale.LC_TIME, 'es_ES.UTF-8')
+#locale.setlocale(locale.LC_TIME, 'es_ES.UTF-8')
+locale.setlocale(locale.LC_TIME, '')  # Establece la localización por defecto del sistema
 
 # Vista principal de la web
 def index(request):
