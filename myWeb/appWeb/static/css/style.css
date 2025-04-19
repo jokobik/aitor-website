@@ -395,6 +395,8 @@ ul li {
 
 /* Estilos para la imagen del certificado */
 .imagen-certificado {
+    border: 1px solid #ddd; /* Borde delgado */
+    border-radius: 10px; /* Bordes redondeados */
     max-height: 100%; /* Altura máxima */
     object-fit: contain; /* Ajusta la imagen manteniendo su relación de aspecto */
     width: 100%; /* Ancho */
@@ -407,6 +409,8 @@ ul li {
 
 /* Estilos para la imagen de la empresa */
 .imagen-empresa {
+    border: 1px solid #ddd; /* Borde delgado */
+    border-radius: 10px; /* Bordes redondeados */
     flex-shrink: 0; /* No permite que la imagen se reduzca */
     max-height: 200px; /* Altura máxima */
     object-fit: contain; /* Ajusta la imagen manteniendo su relación de aspecto */
@@ -540,7 +544,7 @@ ul li {
     /* Estilos para el widget de LinkedIn en pantallas pequeñas */
     #widget-linkedin {
         margin-bottom: 20px; /* Margen inferior */
-        min-width: max-content; /* Ancho mínimo necesario */
+        min-width: max-content;  Ancho mínimo necesario */
         padding-right: 10px; /* Espaciado interno derecho */
         width: 100%; /* Ocupa el 100% del ancho */
     }
