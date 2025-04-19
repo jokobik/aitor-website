@@ -191,7 +191,15 @@ ul li {
     height: 50px; /* Altura del icono */
     margin: 0; /* Elimina el margen predeterminado */
     padding-left: 15px; /* Espaciado interno izquierdo */
+    transition: transform 0.2s ease; /* Transición para efecto hover */
     width: 60px; /* Ancho del icono */
+}
+
+/* Estilos para el hover de certificados en línea */
+#icono-descargar:hover {
+    border-radius: 7px; /* Bordes redondeados */
+    color: #ffffff; /* Texto blanco */
+    transform: scale(1.2); /* Escala el ícono al hacer hover */
 }
 
 /* Estilos para el canvas del PDF */
@@ -202,7 +210,7 @@ ul li {
     display: block; /* Convierte el canvas en un bloque */
     flex: 1; /* Ocupa el espacio disponible */
     margin: 0 auto; /* Centra el canvas */
-    width: 200px; /* Anchura fija para el pdf */
+    max-width: 600px; /* Anchura fija para el pdf */
 }
 
 /* Estilos para el contenedor del perfil */
@@ -450,7 +458,7 @@ ul li {
 
 /* Estilos para la presentación */
 .presentacion {
-    font-size: 17.5px; /* Tamaño de fuente */
+    font-size: 17px; /* Tamaño de fuente */
 }
 
 /* Estilos para secciones generales */

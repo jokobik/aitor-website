@@ -1,10 +1,5 @@
 // scripts.js para la vista previa del pdf
 
-import * as pdfjsLib from 'pdfjs-dist';
-import pdfjsWorker from 'pdfjs-dist/build/pdf.worker.entry';
-
-pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
-
 const url = "/static/pdfs/curriculum_aitor.pdf";  // Asegúrate de que la ruta sea correcta
 
 const loadingTask = pdfjsLib.getDocument(url);
