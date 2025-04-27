@@ -279,7 +279,7 @@ ul li {
 }
 
 /* Estilos para la sección dentro del widget de LinkedIn */
-#widget-linkedin section {
+#widget-linkedin-section {
     display: flex; /* Convierte el elemento en un contenedor Flexbox */
     flex-direction: column; /* Organiza los elementos en columna */
     align-items: center; /* Centra los elementos verticalmente */
@@ -289,7 +289,7 @@ ul li {
 
 /* Estilos para el título del widget de LinkedIn */
 #widget-linkedin-titulo {
-    min-width: max-content; /* Ancho mínimo necesario */
+    text-align: left; /* Alinear texto a la izquierda */
 }
 
 /* ------------------- */
@@ -413,6 +413,7 @@ ul li {
     border-radius: 10px; /* Bordes redondeados */
     flex-shrink: 0; /* No permite que la imagen se reduzca */
     max-height: 200px; /* Altura máxima */
+    padding: 10px; /* Espaciado interno */
     object-fit: contain; /* Ajusta la imagen manteniendo su relación de aspecto */
     width: 200px; /* Ancho */
 }
@@ -518,6 +519,11 @@ ul li {
         text-align: center; /* Alineación del texto */
     }
 
+    /* Estilos para el canvas del PDF en pantallas pequeñas */
+    #pdf-canvas {
+        width: 87%;
+    }
+
     /* Estilos para el contenedor del perfil en pantallas pequeñas */
     #perfil {
         flex-direction: column; /* Cambia a columna en pantallas pequeñas */
@@ -544,8 +550,6 @@ ul li {
     /* Estilos para el widget de LinkedIn en pantallas pequeñas */
     #widget-linkedin {
         margin-bottom: 20px; /* Margen inferior */
-        min-width: max-content;  Ancho mínimo necesario */
-        padding-right: 10px; /* Espaciado interno derecho */
         width: 100%; /* Ocupa el 100% del ancho */
     }
 
