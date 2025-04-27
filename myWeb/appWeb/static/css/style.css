@@ -249,6 +249,11 @@ ul li {
     display: flex; /* Usa Flexbox para alinear elementos */
 }
 
+/* Estilos para la sección de Linkedin */
+#seccion-linkedin {
+    width: 100%;
+}
+
 /* Estilos para el título principal */
 #titulo-principal {
     font-size: 2.5rem; /* Tamaño de fuente */
@@ -521,7 +526,7 @@ ul li {
 
     /* Estilos para el canvas del PDF en pantallas pequeñas */
     #pdf-canvas {
-        width: 87%;
+        width: 85%;
     }
 
     /* Estilos para el contenedor del perfil en pantallas pequeñas */
