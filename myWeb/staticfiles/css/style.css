@@ -191,7 +191,15 @@ ul li {
     height: 50px; /* Altura del icono */
     margin: 0; /* Elimina el margen predeterminado */
     padding-left: 15px; /* Espaciado interno izquierdo */
+    transition: transform 0.2s ease; /* Transición para efecto hover */
     width: 60px; /* Ancho del icono */
+}
+
+/* Estilos para el hover de certificados en línea */
+#icono-descargar:hover {
+    border-radius: 7px; /* Bordes redondeados */
+    color: #ffffff; /* Texto blanco */
+    transform: scale(1.2); /* Escala el ícono al hacer hover */
 }
 
 /* Estilos para el canvas del PDF */
@@ -202,7 +210,7 @@ ul li {
     display: block; /* Convierte el canvas en un bloque */
     flex: 1; /* Ocupa el espacio disponible */
     margin: 0 auto; /* Centra el canvas */
-    width: 200px; /* Anchura fija para el pdf */
+    max-width: 600px; /* Anchura fija para el pdf */
 }
 
 /* Estilos para el contenedor del perfil */
@@ -241,6 +249,11 @@ ul li {
     display: flex; /* Usa Flexbox para alinear elementos */
 }
 
+/* Estilos para la sección de Linkedin */
+#seccion-linkedin {
+    width: 100%;
+}
+
 /* Estilos para el título principal */
 #titulo-principal {
     font-size: 2.5rem; /* Tamaño de fuente */
@@ -255,7 +268,7 @@ ul li {
 #vista-pdf {
     align-self: stretch; /* Iguala la altura con el contenedor izquierdo */
     flex: 2; /* Ocupa el doble de espacio que la sección izquierda */
-    padding: 0 0 0 20px; /* Espaciado interno izquierdo */
+    padding: 0 0 0 20px; /* Espaciado interno */
     text-align: justify; /* Justifica el texto */
 }
 
@@ -271,7 +284,7 @@ ul li {
 }
 
 /* Estilos para la sección dentro del widget de LinkedIn */
-#widget-linkedin section {
+#widget-linkedin-section {
     display: flex; /* Convierte el elemento en un contenedor Flexbox */
     flex-direction: column; /* Organiza los elementos en columna */
     align-items: center; /* Centra los elementos verticalmente */
@@ -281,7 +294,7 @@ ul li {
 
 /* Estilos para el título del widget de LinkedIn */
 #widget-linkedin-titulo {
-    min-width: max-content; /* Ancho mínimo necesario */
+    text-align: left; /* Alinear texto a la izquierda */
 }
 
 /* ------------------- */
@@ -387,6 +400,8 @@ ul li {
 
 /* Estilos para la imagen del certificado */
 .imagen-certificado {
+    border: 1px solid #ddd; /* Borde delgado */
+    border-radius: 10px; /* Bordes redondeados */
     max-height: 100%; /* Altura máxima */
     object-fit: contain; /* Ajusta la imagen manteniendo su relación de aspecto */
     width: 100%; /* Ancho */
@@ -399,8 +414,11 @@ ul li {
 
 /* Estilos para la imagen de la empresa */
 .imagen-empresa {
+    border: 1px solid #ddd; /* Borde delgado */
+    border-radius: 10px; /* Bordes redondeados */
     flex-shrink: 0; /* No permite que la imagen se reduzca */
     max-height: 200px; /* Altura máxima */
+    padding: 10px; /* Espaciado interno */
     object-fit: contain; /* Ajusta la imagen manteniendo su relación de aspecto */
     width: 200px; /* Ancho */
 }
@@ -450,7 +468,7 @@ ul li {
 
 /* Estilos para la presentación */
 .presentacion {
-    font-size: 17.5px; /* Tamaño de fuente */
+    font-size: 17px; /* Tamaño de fuente */
 }
 
 /* Estilos para secciones generales */
@@ -480,7 +498,7 @@ ul li {
 /* Media Queries */
 /* ------------- */
 
-/* Estilos para pantallas con ancho máximo de 600px */
+/* Estilos para pantallas con ancho máximo de 800px */
 @media (max-width: 800px) {
 
     /* Estilos para el pie de página en pantallas pequeñas */
@@ -504,6 +522,11 @@ ul li {
     #fcer, #fder, #fizq {
         margin-bottom: 10px; /* Margen inferior */
         text-align: center; /* Alineación del texto */
+    }
+
+    /* Estilos para el canvas del PDF en pantallas pequeñas */
+    #pdf-canvas {
+        width: 85%;
     }
 
     /* Estilos para el contenedor del perfil en pantallas pequeñas */
@@ -532,8 +555,6 @@ ul li {
     /* Estilos para el widget de LinkedIn en pantallas pequeñas */
     #widget-linkedin {
         margin-bottom: 20px; /* Margen inferior */
-        min-width: max-content; /* Ancho mínimo necesario */
-        padding-right: 10px; /* Espaciado interno derecho */
         width: 100%; /* Ocupa el 100% del ancho */
     }
 
@@ -612,5 +633,20 @@ ul li {
         align-items: flex-start; /* Alinea los elementos al inicio */
         display: flex; /* Usa Flexbox para alinear elementos */
         flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    }
+}
+
+/* Estilos para pantallas verticales */
+@media (max-aspect-ratio: 1/1) {
+    /* Estilos para la vista del PDF en pantallas verticales */
+    #vista-pdf {
+        padding: 0; /* Elimina el padding */
+        width: 100%; /* Ocupa el 100% del ancho */
+    }
+
+    /* Estilos para el widget de LinkedIn en pantallas verticales */
+    #widget-linkedin {
+        margin-bottom: 20px; /* Margen inferior */
+        width: 100%; /* Ocupa el 100% del ancho */
     }
 }

@@ -1,4 +1,4 @@
-// scripts.js
+// scripts.js para la vista previa del pdf
 
 const url = "/static/pdfs/curriculum_aitor.pdf";  // Asegúrate de que la ruta sea correcta
 
