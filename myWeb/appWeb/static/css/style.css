@@ -268,7 +268,7 @@ ul li {
 #vista-pdf {
     align-self: stretch; /* Iguala la altura con el contenedor izquierdo */
     flex: 2; /* Ocupa el doble de espacio que la sección izquierda */
-    padding: 0 0 0 20px; /* Espaciado interno izquierdo */
+    padding: 0 0 0 20px; /* Espaciado interno */
     text-align: justify; /* Justifica el texto */
 }
 
@@ -498,7 +498,7 @@ ul li {
 /* Media Queries */
 /* ------------- */
 
-/* Estilos para pantallas con ancho máximo de 600px */
+/* Estilos para pantallas con ancho máximo de 800px */
 @media (max-width: 800px) {
 
     /* Estilos para el pie de página en pantallas pequeñas */
@@ -633,5 +633,20 @@ ul li {
         align-items: flex-start; /* Alinea los elementos al inicio */
         display: flex; /* Usa Flexbox para alinear elementos */
         flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    }
+}
+
+
+@media (max-aspect-ratio: 1/1) {
+    /* Estilos para la vista del PDF en pantallas verticales */
+    #vista-pdf {
+        padding: 0; /* Elimina el padding */
+        width: 100%; /* Ocupa el 100% del ancho */
+    }
+
+    /* Estilos para el widget de LinkedIn en pantallas verticales */
+    #widget-linkedin {
+        margin-bottom: 20px; /* Margen inferior */
+        width: 100%; /* Ocupa el 100% del ancho */
     }
 }
