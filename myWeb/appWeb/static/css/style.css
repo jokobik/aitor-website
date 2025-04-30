@@ -526,7 +526,6 @@ ul li {
 
     /* Estilos para el icono de descarga en pantallas pequeñas */
     #icono-descargar {
-        padding: 0; /* Elimina el padding */
         width: 40px; /* Ancho del icono */
     }
 
