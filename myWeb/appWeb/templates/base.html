@@ -10,6 +10,11 @@
 </head>
 <body>
     <header>
+        <button class="menu-toggle" aria-expanded="false" aria-controls="main-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
         <div id="hizq">
             <h1 id="titulo-principal"><a href="{% url 'index' %}">Portfolio</a></h1>
         </div>
@@ -18,19 +23,23 @@
         </div>
     </header>
 
-    <nav>
-        <h2></h2>
-        <h2 class="inline-element"><a href="{% url 'index' %}">Home</a></h2>
-        <h1 class="inline-element">|</h1>
-        <h2 class="inline-element"><a href="{% url 'experiencia' %}">Expriencia</a></h2>
-        <h1 class="inline-element">|</h1>
-        <h2 class="inline-element"><a href="{% url 'educacion' %}">Educación</a></h2>
-        <h1 class="inline-element">|</h1>
-        <h2 class="inline-element"><a href="{% url 'certificado' %}">Certificados</a></h2>
-        <h1 class="inline-element">|</h1>
-        <h2 class="inline-element"><a href="{% url 'contacto' %}">Contacto</a></h2>
-        <h2></h2>
-    </nav>
+    <div class="menu-container">
+
+        <nav id="main-menu" class="menu">
+            <h2></h2>
+            <!--<img src="{% static 'images/menu.png' %}">-->
+            <h2 class="inline-element"><a href="{% url 'index' %}">Home</a></h2>
+            <h1 class="inline-element">|</h1>
+            <h2 class="inline-element"><a href="{% url 'experiencia' %}">Expriencia</a></h2>
+            <h1 class="inline-element">|</h1>
+            <h2 class="inline-element"><a href="{% url 'educacion' %}">Educación</a></h2>
+            <h1 class="inline-element">|</h1>
+            <h2 class="inline-element"><a href="{% url 'certificado' %}">Certificados</a></h2>
+            <h1 class="inline-element">|</h1>
+            <h2 class="inline-element"><a href="{% url 'contacto' %}">Contacto</a></h2>
+            <h2></h2>
+        </nav>
+    </div>
 
     <main>
         {% block contenido %}
@@ -61,5 +70,21 @@
             </section>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const mainMenu = document.getElementById('main-menu');
+
+            if (menuToggle && mainMenu) {
+                menuToggle.addEventListener('click', function() {
+                    const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+                    this.setAttribute('aria-expanded', !expanded);
+                    mainMenu.classList.toggle('open'); // Mantenemos esto para mostrar/ocultar el menú
+                    this.classList.toggle('open'); // Añadimos/eliminamos la clase 'open' al botón
+                });
+            }
+        });
+    </script>
 </body>
 </html>
