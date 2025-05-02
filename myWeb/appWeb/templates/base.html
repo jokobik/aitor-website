@@ -21,10 +21,6 @@
         <div id="hder">
             <h2 id="titulo-secundario">{{ titulo_pagina }}</h2>
         </div>
-    </header>
-
-    <div class="menu-container">
-
         <nav id="main-menu" class="menu">
             <h2 class="ocultar"></h2>
             <h2 class="inline-element"><a href="{% url 'index' %}">Home</a></h2>
@@ -38,6 +34,10 @@
             <h2 class="inline-element"><a href="{% url 'contacto' %}">Contacto</a></h2>
             <h2></h2>
         </nav>
+    </header>
+
+    <div class="menu-container">
+
     </div>
 
     <main>
@@ -74,16 +74,30 @@
         document.addEventListener('DOMContentLoaded', function() {
             const menuToggle = document.querySelector('.menu-toggle');
             const mainMenu = document.getElementById('main-menu');
+            const header = document.querySelector('header');
 
-            if (menuToggle && mainMenu) {
+            if (menuToggle && mainMenu && header) {
+                // Inicialmente oculta el menú fuera de la vista
+                mainMenu.style.top = '-100vh';
+
                 menuToggle.addEventListener('click', function() {
                     const expanded = this.getAttribute('aria-expanded') === 'true' || false;
                     this.setAttribute('aria-expanded', !expanded);
-                    mainMenu.classList.toggle('open'); // Mantenemos esto para mostrar/ocultar el menú
-                    this.classList.toggle('open'); // Añadimos/eliminamos la clase 'open' al botón
+                    mainMenu.classList.toggle('open');
+                    this.classList.toggle('open');
+
+                    if (mainMenu.classList.contains('open')) {
+                        const headerHeight = header.offsetHeight;
+                        mainMenu.style.top = `${headerHeight}px`; // Muestra el menú debajo del header
+                        mainMenu.style.transform = 'translateY(0)'; // Asegura que no haya desplazamiento adicional
+                    } else {
+                        mainMenu.style.top = '-100vh'; // Oculta el menú fuera de la vista
+                        mainMenu.style.transform = 'translateY(0)'; // Asegura que vuelva a su posición inicial para la animación
+                    }
                 });
             }
         });
+
     </script>
 </body>
 </html>
