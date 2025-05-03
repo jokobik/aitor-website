@@ -93,7 +93,10 @@ nav {
     border-bottom-right-radius: 10px; /* Borde inferior derecho redondeado */
     display: flex; /* Usa Flexbox para alinear los div en línea */
     justify-content: space-around; /* Distribuye el espacio entre los div */
+    left: 0;
     padding: 10px 0; /* Espaciado interno */
+    width: 100%; /* Para que ocupe el ancho del contenedor de posicionamiento */
+    z-index: 10; /* Asegúrate de que esté por encima de otros elementos si es necesario */
 }
 
 /* Estilos para párrafos */
@@ -384,6 +387,12 @@ ul li {
     padding: 0 0 0 20px; /* Espaciado interno izquierdo */
 }
 
+/* Estilos para el contenedor si necesitas algo específico */
+.header-container {
+    position: relative;
+    width: 100%; /* Ocupar el ancho maximo */
+}
+
 /* Estilos para íconos del pie de página */
 .icon-footer {
     border-radius: 15%; /* Bordes redondeados */
@@ -472,12 +481,6 @@ ul li {
     justify-content: space-around; /* Mantener la distribución de los enlaces */
 }
 
-/* Estilos para el contenedor del menú desplegable */
-.menu-container {
-    position: relative; /* Necesario para posicionar el menú desplegable */
-    width: 100%; /* Ocupar el ancho completo del header o contenedor padre */
-}
-
 /* Estilos para el botón del menú */
 .menu-toggle {
     align-items: flex-start; /* Alinear las barras a la izquierda dentro del botón */
@@ -549,14 +552,20 @@ ul li {
         text-align: center; /* Alineación del texto */
     }
 
-    /* Asegurar que el header sea un contenedor de posicionamiento */
+    /* Estilos para el header en pantallas pequeñas */
     header {
-        align-items: center; /* Centra verticalmente los elementos del header */
-        border-bottom-left-radius: 10px; /* Borde superior izquierdo redondeado */
-        border-bottom-right-radius: 10px; /* Borde superior derecho redondeado */
-        flex-direction: row; /* O column, según tu diseño */
-        justify-content: space-between; /* O la distribución que necesites */
-        position: relative; /* El header es el contenedor de posicionamiento en pantallas pequeñas */
+        align-items: center;
+        border-bottom-left-radius: 10px; /* Borde inferior izquierdo redondeado (POR DEFECTO) */
+        border-bottom-right-radius: 10px; /* Borde inferior derecho redondeado (POR DEFECTO) */
+        flex-direction: row;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    /* Eliminar los bordes inferiores redondeados del header cuando el menú está abierto */
+    header.open {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
     }
 
     /* Estilos para el menú desplegable en pantallas pequeñas (SIMPLIFICADO) */
@@ -565,24 +574,27 @@ ul li {
         background-color: #222; /* Color de fondo oscuro para el menú */
         border-radius: 10px; /* Bordes redondeados para mejor estética */
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil para efecto de elevación */
-        display: block; /* Inicialmente visible para calcular la altura, luego lo ocultamos con transform */
         flex-direction: column; /* Diseño vertical para menú desplegable */
         left: 0; /* Alineación desde el borde izquierdo */
         opacity: 0; /* Inicialmente invisible */
         padding-top: 0; /* Sin relleno interno superior para máximo espacio útil */
         position: absolute; /* Posicionamiento absoluto respecto al contenedor padre */
         top: 0; /* Inicialmente pegado a la parte superior */
-        transform-origin: top center; /* La transformación se origina desde la parte superior */
-        transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, padding-top 0.5s ease-in-out;
+        /*transform-origin: top center; /* La transformación se origina desde la parte superior */
+        transform: translateY(-100%); /* Inicialmente visible (para depuración) - luego lo ocultaremos */
+        transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, padding-top 0.5s ease-in-out, display 0.5s step-end;
         width: 100%; /* Ancho completo del contenedor padre */
         z-index: 10; /* Prioridad de capa para superponer otros elementos */
     }
 
     nav#main-menu.open {
-        display: block !important; /* Mostrar cuando la clase 'open' está activa */
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        display: flex !important; /* Mostrar cuando la clase 'open' está activa */
         opacity: 1; /* Hacer visible */
+        transform: translateY(0%); /* Vuelve a su posición justo debajo del header */
         /* transform: translateY(var(--header-height));  Desplázalo hacia abajo la altura del header */
-        /* transform: translateY(0%);  Vuelve a su posición justo debajo del header */
+        transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, display 0.01s step-start; */
     }
 
     nav#main-menu a {
@@ -597,9 +609,10 @@ ul li {
         border-bottom: none; /* Eliminar el borde del último enlace */
     }
 
-    /* Ocultar los elementos inline-element dentro del nav en pantallas pequeñas */
-    nav h1.inline-element {
-        display: none; /* Hace que el botón ocupe toda la línea disponible */
+    /* Estilos para cuando los títulos tienen la clase 'inline-titles' (menú plegado) */
+    nav#main-menu .inline-titles {
+        display: inline-block; /* O inline */
+        /* Otros estilos para el estado plegado */
     }
 
     /* Estilos para el contenedor de contacto en pantallas pequeñas */
@@ -764,6 +777,15 @@ ul li {
         align-items: flex-start; /* Alinea los elementos al inicio */
         display: flex; /* Usa Flexbox para alinear elementos */
         flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    }
+}
+
+@media (min-width: 801px) {
+    nav#main-menu {
+        position: static;
+        display: flex; /* o inline-flex, según tu estructura */
+        opacity: 1 !important;
+        transform: none !important;
     }
 }
 
