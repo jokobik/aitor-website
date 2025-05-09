@@ -93,7 +93,7 @@ nav {
     border-bottom-right-radius: 10px; /* Borde inferior derecho redondeado */
     display: flex; /* Usa Flexbox para alinear los div en línea */
     justify-content: space-around; /* Distribuye el espacio entre los div */
-    left: 0;
+    left: 0; /* Alinea el elemento al borde izquierdo */
     padding: 10px 0; /* Espaciado interno */
     width: 100%; /* Para que ocupe el ancho del contenedor de posicionamiento */
     z-index: 10; /* Asegúrate de que esté por encima de otros elementos si es necesario */
@@ -252,7 +252,7 @@ ul li {
 
 /* Estilos para la sección de Linkedin */
 #seccion-linkedin {
-    width: 100%;
+    width: 100%; /* Ocupa el ancho disponible */
 }
 
 /* Estilos para el título principal */
@@ -389,7 +389,7 @@ ul li {
 
 /* Estilos para el contenedor si necesitas algo específico */
 .header-container {
-    position: relative;
+    position: relative; /* Crea un contexto para posicionar elementos hijos absolutos */
     width: 100%; /* Ocupar el ancho maximo */
 }
 
@@ -554,57 +554,72 @@ ul li {
 
     /* Estilos para el header en pantallas pequeñas */
     header {
-        align-items: center;
+        align-items: center; /* Centra verticalmente los elementos hijos */
         border-bottom-left-radius: 10px; /* Borde inferior izquierdo redondeado (POR DEFECTO) */
         border-bottom-right-radius: 10px; /* Borde inferior derecho redondeado (POR DEFECTO) */
-        flex-direction: row;
-        justify-content: space-between;
-        position: relative;
+        flex-direction: row; /* Disposición horizontal de los elementos */
+        justify-content: space-between; /* Distribuye el espacio entre elementos */
+        position: relative; /* Establece contexto de posicionamiento */
     }
 
     /* Eliminar los bordes inferiores redondeados del header cuando el menú está abierto */
-    header.open {
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
+    header.menu-open {
+        border-bottom-left-radius: 0; /* Elimina radio inferior izquierdo */
+        border-bottom-right-radius: 0; /* Elimina radio inferior derecho */
     }
 
-    /* Estilos para el menú desplegable en pantallas pequeñas (SIMPLIFICADO) */
+    /* Menú principal - Estado inicial (oculto) */
     nav#main-menu {
-        align-items: stretch; /* Estirar los enlaces para ocupar el ancho */
-        background-color: #222; /* Color de fondo oscuro para el menú */
-        border-radius: 10px; /* Bordes redondeados para mejor estética */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil para efecto de elevación */
-        flex-direction: column; /* Diseño vertical para menú desplegable */
-        left: 0; /* Alineación desde el borde izquierdo */
-        opacity: 0; /* Inicialmente invisible */
-        padding-top: 0; /* Sin relleno interno superior para máximo espacio útil */
-        position: absolute; /* Posicionamiento absoluto respecto al contenedor padre */
-        top: 0; /* Inicialmente pegado a la parte superior */
-        /*transform-origin: top center; /* La transformación se origina desde la parte superior */
-        transform: translateY(-100%); /* Inicialmente visible (para depuración) - luego lo ocultaremos */
-        transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, padding-top 0.5s ease-in-out, display 0.5s step-end;
-        width: 100%; /* Ancho completo del contenedor padre */
-        z-index: 10; /* Prioridad de capa para superponer otros elementos */
+        align-items: stretch; /* Estira los items para ocupar el ancho disponible */
+        background-color: #222; /* Color de fondo oscuro (#222) para el menú */
+        border-radius: 10px; /* Radios solo en esquinas inferiores */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+        display: flex; /* Activa flexbox */
+        flex-direction: column; /* Disposición vertical */
+        left: 0; /* Alineado a la izquierda */
+        max-height: 0; /* Altura inicial colapsada */
+        opacity: 0; /* Inicialmente transparente */
+        overflow: hidden; /* Oculta contenido que sobresale */
+        position: absolute; /* Posicionamiento absoluto */
+        top: 100%; /* Posicionado debajo del header */
+        transform: translateY(-10px); /* Desplazado hacia arriba inicialmente */
+        transition:
+            max-height 0.4s cubic-bezier(0.22, 0.61, 0.36, 1), /* Animación altura */
+            opacity 0.3s ease-in-out, /* Animación opacidad */
+            transform 0.3s ease-in-out; /* Animación desplazamiento */
+        width: 100%; /* Ancho completo */
+        z-index: 10; /* Por debajo del header */
+        /*will-change: transform, opacity; /* Optimización para animaciones */
     }
 
+    /* Menú abierto */
     nav#main-menu.open {
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-        display: flex !important; /* Mostrar cuando la clase 'open' está activa */
-        opacity: 1; /* Hacer visible */
-        transform: translateY(0%); /* Vuelve a su posición justo debajo del header */
-        /* transform: translateY(var(--header-height));  Desplázalo hacia abajo la altura del header */
-        transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, display 0.01s step-start; */
+        border-top-left-radius: 0; /* Elimina radio superior izquierdo */
+        border-top-right-radius: 0; /* Elimina radio superior derecho */
+        max-height: 500px; /* Ajusta según tu contenido */
+        opacity: 1; /* Totalmente visible */
+        transform: translateY(0); /* Posición natural */
     }
 
+    /* Estilos para títulos en el menú abierto */
+    nav#main-menu.open .inline-titles {
+        display: block ; /* Cambia a bloque para apilar verticalmente */
+        margin-bottom: 10px ; /* Espaciado entre elementos */
+        text-align: left ; /* Alineación del texto */
+        width: 100% ; /* Ocupa el ancho disponible */
+    }
+
+    /* Elementos del menu */
     nav#main-menu a {
         border-bottom: 1px solid #333; /* Separador entre enlaces */
         color: white; /* Mantener el color de los enlaces */
         display: block; /* Hace que el botón ocupe toda la línea disponible */
         padding: 10px 15px; /* Espaciado interno del botón para mayor área clicable y separación visual */
         text-align: left; /* Alinea el contenido del botón (como íconos o texto) a la izquierda */
+        transition: background-color 0.2s ease; /* Transición hover */
     }
 
+    /* Estilos para el ultimo enlace del menu */
     nav#main-menu a:last-child {
         border-bottom: none; /* Eliminar el borde del último enlace */
     }
@@ -777,15 +792,6 @@ ul li {
         align-items: flex-start; /* Alinea los elementos al inicio */
         display: flex; /* Usa Flexbox para alinear elementos */
         flex-direction: column; /* Cambia a columna en pantallas pequeñas */
-    }
-}
-
-@media (min-width: 801px) {
-    nav#main-menu {
-        position: static;
-        display: flex; /* o inline-flex, según tu estructura */
-        opacity: 1 !important;
-        transform: none !important;
     }
 }
 
