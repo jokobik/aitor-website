@@ -542,11 +542,25 @@ ul li {
 
 
 
+/* ===== DEBUG VISUAL ===== */
 .force-dark-mode header,
 .force-dark-mode footer {
-  background: #333 !important;
-  color: white !important;
-  border: 2px solid yellow !important;
+  background-color: #FF0000 !important; /* Rojo brillante */
+  color: #FFFFFF !important;
+  border: 5px solid #00FF00 !important; /* Borde verde */
+  position: relative;
+}
+
+.force-dark-mode header::after,
+.force-dark-mode footer::before {
+  content: "¡MODO OSCURO ACTIVADO (CSS APLICADO!)";
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 10px;
+  background: #000;
+  color: #FFF;
+  text-align: center;
 }
 
 

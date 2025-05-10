@@ -70,11 +70,13 @@
     </footer>
     <script src="{% static 'js/animacion_menu.js' %}"></script>
 <script>
-// Detecta modo oscuro y aplica clase como respaldo
-if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-  console.log('Modo oscuro detectado via JS');
-  document.documentElement.classList.add('force-dark-mode');
-}
+// Versión corregida - verifica modo oscuro y aplica clase
+document.addEventListener('DOMContentLoaded', function() {
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.documentElement.classList.add('force-dark-mode');
+    console.log('Modo oscuro activado mediante JS');
+  }
+});
 </script>
 </body>
 </html>
