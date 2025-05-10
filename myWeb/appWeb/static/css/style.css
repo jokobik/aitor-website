@@ -822,4 +822,8 @@ ul li {
         color: var(--text-color);
         border-color: #4a5568;
     }
+
+    /* Estilos para las barras del menú */
+    .bar {
+        background-color: white; /* O el color que desees */
 }
