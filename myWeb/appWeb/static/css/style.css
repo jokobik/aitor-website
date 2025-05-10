@@ -551,8 +551,8 @@ ul li {
   position: relative;
 }
 
-.force-dark-mode header::after,
-.force-dark-mode footer::before {
+body .force-dark-mode header::after,
+body .force-dark-mode footer::before {
   content: "¡MODO OSCURO ACTIVADO (CSS APLICADO!)";
   display: block;
   font-size: 1.2rem;
