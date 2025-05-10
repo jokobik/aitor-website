@@ -69,5 +69,12 @@
         </div>
     </footer>
     <script src="{% static 'js/animacion_menu.js' %}"></script>
+<script>
+// Detecta modo oscuro y aplica clase como respaldo
+if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  console.log('Modo oscuro detectado via JS');
+  document.documentElement.classList.add('force-dark-mode');
+}
+</script>
 </body>
 </html>

@@ -540,6 +540,17 @@ ul li {
     margin-bottom: 0; /* Margen inferior */
 }
 
+
+
+.force-dark-mode header,
+.force-dark-mode footer {
+  background: #333 !important;
+  color: white !important;
+  border: 2px solid yellow !important;
+}
+
+
+
 /* ------------- */
 /* Media Queries */
 /* ------------- */
@@ -812,21 +823,24 @@ ul li {
 
 /* En tu archivo CSS principal - Añade !important temporalmente */
 @media (prefers-color-scheme: dark) {
-  header,
-  footer {
-    background-color: #FF0000 !important; /* Rojo intenso para prueba */
-    color: #FFFFFF !important;
-    border: 3px solid #00FF00 !important; /* Borde verde */
+  :root {
+    --debug-color: red !important;
   }
 
-  /* Debug visual */
+  header,
+  footer {
+    background: lime !important;
+    color: black !important;
+    outline: 3px dashed red !important;
+  }
+
   body::before {
-    content: "MODO OSCURO ACTIVADO (CSS)";
-    display: block;
-    padding: 1rem;
-    background: #000;
-    color: #FFF;
-    font-weight: bold;
-    text-align: center;
+    content: "¡CSS EN MODO OSCURO ACTIVADO!" !important;
+    display: block !important;
+    padding: 1rem !important;
+    background: black !important;
+    color: white !important;
+    font-size: 1.5rem !important;
+    text-align: center !important;
   }
 }
