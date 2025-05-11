@@ -21,7 +21,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "myWeb/wsgi.py"
+      "dest": "wsgi.py"
     }
   ]
 }
