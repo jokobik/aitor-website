@@ -6,11 +6,11 @@
       "config": {
         "maxLambdaSize": "15mb",
         "runtime": "python3.12",
-        "requirements": "requirements.txt"
+        "requirements": "./requirements.txt"
       }
     },
     {
-      "src": "static/**",
+      "src": "appWeb/static/**",
       "use": "@vercel/static"
     }
   ],
@@ -21,7 +21,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "myWeb/wsgi.py"
+      "dest": "wsgi.py"
     }
   ]
 }
