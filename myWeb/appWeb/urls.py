@@ -19,4 +19,7 @@ urlpatterns = [
 
     # Url para contacto
     path('contacto', views.ContactoListView.as_view(), name='contacto'),
+
+    # Url para Login
+    path('login', views.LoginListView.as_view(), name='login'),
 ]

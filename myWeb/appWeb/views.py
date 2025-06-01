@@ -1,8 +1,9 @@
 from appWeb.models import anio_inicio
+from django.contrib.auth import login
 from django.shortcuts import render
 from django.views.generic import DetailView, ListView
 from django.http import HttpResponse
-from .models import Experiencia, Educacion, Certificado, Contacto
+from .models import Experiencia, Educacion, Certificado, Contacto, Usuario
 from django.db.models import Case, When, Value, BooleanField
 import calendar
 import locale
@@ -157,3 +158,13 @@ class ContactoListView(ListView):
         context['titulo_pagina'] = 'Contacto'
         return context
 
+
+# Vista para logearse como admin
+class LoginListView(ListView):
+    model = Usuario
+    template_name = 'login.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(LoginListView, self).get_context_data(**kwargs)
+        context['titulo_pagina'] = 'Login'
+        return context

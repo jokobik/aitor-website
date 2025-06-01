@@ -540,31 +540,6 @@ ul li {
     margin-bottom: 0; /* Margen inferior */
 }
 
-
-
-/* ===== DEBUG VISUAL ===== */
-.force-dark-mode header,
-.force-dark-mode footer {
-  background-color: #FF0000 !important; /* Rojo brillante */
-  color: #FFFFFF !important;
-  border: 5px solid #00FF00 !important; /* Borde verde */
-  position: relative;
-}
-
-body .force-dark-mode header::after,
-body .force-dark-mode footer::before {
-  content: "¡MODO OSCURO ACTIVADO (CSS APLICADO!)";
-  display: block;
-  font-size: 1.2rem;
-  font-weight: bold;
-  padding: 10px;
-  background: #000;
-  color: #FFF;
-  text-align: center;
-}
-
-
-
 /* ------------- */
 /* Media Queries */
 /* ------------- */
@@ -833,28 +808,4 @@ body .force-dark-mode footer::before {
         margin-bottom: 20px; /* Margen inferior */
         width: 100%; /* Ocupa el 100% del ancho */
     }
-}
-
-/* En tu archivo CSS principal - Añade !important temporalmente */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --debug-color: red !important;
-  }
-
-  header,
-  footer {
-    background: lime !important;
-    color: black !important;
-    outline: 3px dashed red !important;
-  }
-
-  body::before {
-    content: "¡CSS EN MODO OSCURO ACTIVADO!" !important;
-    display: block !important;
-    padding: 1rem !important;
-    background: black !important;
-    color: white !important;
-    font-size: 1.5rem !important;
-    text-align: center !important;
-  }
 }

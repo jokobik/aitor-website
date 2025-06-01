@@ -8,6 +8,7 @@
     <a class="enlace-volver" href="{% url 'certificado' %}"><img class="imagen-volver" src="{% static 'images/flechavolver.png' %}"></a>
 </div>
 <ul class="lista-exp-edu">
+    <li>Emisor: {{ certificado.emisor }}</li>
     <li>Expedición: {{ mes_expedicion_nombre }} {{ certificado.anio_expedicion }}</li>
 
     {% if certificado.id_credencial %}

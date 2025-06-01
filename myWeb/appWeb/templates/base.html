@@ -8,6 +8,9 @@
     <meta name="color-scheme" content="light dark">
     <title>Portfolio Aitor</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/animacion_menu.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 </head>
 <body>
     <div class="header-container">
@@ -35,6 +38,8 @@
             <h2 class="inline-element"><a href="{% url 'certificado' %}">Certificados</a></h2>
             <h1 class="inline-element ocultar">|</h1>
             <h2 class="inline-element"><a href="{% url 'contacto' %}">Contacto</a></h2>
+            <h1 class="inline-element ocultar">|</h1>
+            <h2 class="inline-element"><a href="{% url 'login' %}">Login</a></h2>
             <h2></h2>
         </nav>
     </div>
@@ -68,15 +73,5 @@
             </section>
         </div>
     </footer>
-    <script src="{% static 'js/animacion_menu.js' %}"></script>
-<script>
-// Versión corregida - verifica modo oscuro y aplica clase
-document.addEventListener('DOMContentLoaded', function() {
-  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    document.documentElement.classList.add('force-dark-mode');
-    console.log('Modo oscuro activado mediante JS');
-  }
-});
-</script>
 </body>
 </html>

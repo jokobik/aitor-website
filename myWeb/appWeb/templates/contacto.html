@@ -6,7 +6,7 @@
     <div id="widget-linkedin">
         <section id="seccion-linkedin">
             <h3 id="widget-linkedin-titulo">Escribeme por Linkedin</h3>
-            <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+            <!--Vista previa insigna Linkedin-->
             <div id="widget-linkedin-section" class="badge-base LI-profile-badge" data-locale="es_ES" data-size="large" data-theme="light"
                  data-type="VERTICAL" data-vanity="aitor-lopez-roncero" data-version="v1">
                 <a class="badge-base__link LI-simple-link"
@@ -19,9 +19,9 @@
     <div id="vista-pdf">
         <section class="section-final secciones">
             <h3>Descarga mi curriculum y contactame</h3>
-                <!--Vista previa pdf-->
+            <!--Vista previa pdf-->
             <div id="seccion-cv">
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+
                 <canvas id="pdf-canvas"></canvas>
                 <script src="{% static 'js/pdf_viewer.js' %}"></script>
                 <a id="enlace-descargar" href="{% static 'pdfs/curriculum_aitor.pdf' %}" download class="btn-descarga">

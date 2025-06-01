@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import AbstractUser
 import datetime
 
 # Create your models here.
@@ -99,3 +100,17 @@ class Contacto(models.Model):
 
     def __str__(self):
         return f"{self.tipo_archivo} de {self.nombre_persona}"
+
+
+# Clase abstracta de Django para generar usuarios en DB
+class Usuario(AbstractUser):
+    # Configuración de campos requeridos
+    REQUIRED_FIELDS = ['email', 'first_name']  # Además de username y password
+
+    class Meta:
+        verbose_name = 'Usuario'
+        verbose_name_plural = 'Usuarios'
+        ordering = ['-date_joined']  # Ordenar por fecha de registro descendente
+
+    def __str__(self):
+        return f"{self.username} ({self.get_full_name()})"
