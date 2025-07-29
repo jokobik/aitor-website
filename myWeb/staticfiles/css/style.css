@@ -410,6 +410,7 @@ ul li {
 /* Estilos para elementos en línea */
 .inline-element {
     display: inline-block; /* Hace que los elementos estén en línea */
+    height: 40px; /* Altura */
     margin: 0; /* Elimina el margen predeterminado */
     padding: 0; /* Elimina el padding predeterminado */
     transition: transform 0.3s ease; /* Transición suave para el efecto hover */
@@ -473,6 +474,11 @@ ul li {
 .lista-experiencia li {
     line-height: 1.5; /* Altura de línea */
     margin-bottom: 8px; /* Margen inferior */
+}
+
+.login-logout {
+    height: 40px; /* Altura */
+    width: 40px; /* Anchura */
 }
 
 /* Estilos para el menú desplegable */
@@ -649,6 +655,11 @@ ul li {
     /* Estilos para el icono de descarga en pantallas pequeñas */
     #icono-descargar {
         width: 40px; /* Ancho del icono */
+    }
+
+    /* Estilos para el ultimo elemento del menu en pantallas pequeñas */
+    #menu-final{
+        height: 7px;
     }
 
     /* Estilos para el canvas del PDF en pantallas pequeñas */
