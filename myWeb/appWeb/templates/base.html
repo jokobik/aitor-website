@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light dark">
-    <title>Portfolio Aitor</title>
+    <title>Aitor | {{ titulo_ventana }}</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="{% static 'js/animacion_menu.js' %}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
@@ -40,7 +40,10 @@
             <h2 class="inline-element"><a href="{% url 'contacto' %}">Contacto</a></h2>
             <h1 class="inline-element ocultar">|</h1>
             <h2 class="inline-element">
-                <a href="{% url 'login' %}"><img class="login-logout" src="{% static 'images/login.png' %}"></a>
+                <a href="{% url 'login' %}">
+                    <img class="login-logout" src="{% static 'images/login.png' %}">
+                    <!--{{ logged_user }}-->
+                </a>
             </h2>
             <h2 id="menu-final"></h2>
         </nav>

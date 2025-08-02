@@ -17,7 +17,7 @@ locale.setlocale(locale.LC_TIME, '')  # Establece la localización por defecto d
 
 # Vista principal de la web
 def index(request):
-    context = {'titulo_pagina': 'Home'}
+    context = {'titulo_ventana': 'Home', 'titulo_pagina': 'Home'}
     return render(request, 'index.html', context)
 
 #def experiencia(request):
@@ -45,6 +45,7 @@ class ExperienciaListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(ExperienciaListView, self).get_context_data(**kwargs)
+        context['titulo_ventana'] = 'Experiencia'
         context['titulo_pagina'] = 'Experiencia'
 
         for experiencia in context['lista_experiencia']:
@@ -83,6 +84,7 @@ class EducacionListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(EducacionListView, self).get_context_data(**kwargs)
+        context['titulo_ventana'] = 'Educación'
         context['titulo_pagina'] = 'Educación'
 
         for educacion in context['lista_educacion']:
@@ -101,8 +103,6 @@ class EducacionListView(ListView):
                 ]
         return context
 
-        return context
-
 # Vista para los Certificados
 class CertificadoListView(ListView):
     model = Certificado
@@ -113,6 +113,7 @@ class CertificadoListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(CertificadoListView, self).get_context_data(**kwargs)
+        context['titulo_ventana'] = 'Certificados'
         context['titulo_pagina'] = 'Certificados'
 
         for certificado in context['lista_certificado']:
@@ -132,6 +133,9 @@ class CertificadoDetailView(DetailView):
 
         # Obtiene la instancia actual de Experiencia
         certificado = self.object
+        # Obtener nombre de instancia para titulo ventana
+        context['titulo_ventana'] = certificado.titulo_corto
+
         # Convertir mes_inicio (asumiendo que es un número) a su nombre
         if certificado.mes_expedicion:
             context['mes_expedicion_nombre'] = calendar.month_name[int(certificado.mes_expedicion)].capitalize()
@@ -155,6 +159,7 @@ class ContactoListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(ContactoListView, self).get_context_data(**kwargs)
+        context['titulo_ventana'] = 'Contacto'
         context['titulo_pagina'] = 'Contacto'
         return context
 
@@ -166,5 +171,11 @@ class LoginListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(LoginListView, self).get_context_data(**kwargs)
+        context['titulo_ventana'] = 'Login'
         context['titulo_pagina'] = 'Login'
+
+        """# Obtiene la instancia actual de Experiencia
+        usuario = self.object
+        # Obtener nombre de instancia para titulo ventana
+        context['logged_user'] = usuario.username"""
         return context

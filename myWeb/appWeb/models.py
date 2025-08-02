@@ -79,6 +79,7 @@ class Educacion(models.Model):
 
 class Certificado(models.Model):
     titulo = models.CharField(max_length=200)
+    titulo_corto = models.CharField(max_length=30)
     emisor = models.CharField(max_length=200)
     # Campo para almacenar el mes como texto
     mes_expedicion = models.CharField(max_length=2, choices=MES_CHOICES)
