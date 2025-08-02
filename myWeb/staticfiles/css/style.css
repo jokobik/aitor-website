@@ -203,6 +203,88 @@ ul li {
     width: 100%; /* Ajusta el ancho de la imagen */
 }
 
+
+
+/* Contenedor principal del login */
+#login-container {
+    align-items: center; /* Centrar elementos hijos horizontalmente */
+    display: flex; /* Usar flexbox para organizar en columna */
+    flex-direction: column; /* Alinear elementos verticalmente uno debajo del otro */
+    gap: 15px; /* Espacio entre cada elemento */
+    margin: auto;
+    width: 25%; /* Ancho fijo del formulario */
+}
+
+/* Botón de iniciar sesión dentro del contenedor */
+#login-container > button {
+    background-color: black; /* Fondo negro */
+    border: none; /* Sin borde adicional */
+    border-radius: 10px; /* Esquinas redondeadas */
+    color: white; /* Texto blanco para contraste */
+    cursor: pointer; /* Cursor tipo mano al pasar por encima */
+    font-size: 14px; /* Tamaño del texto */
+    padding: 10px; /* Espaciado interno */
+    transition: background 0.3s; /* Transición suave del color al hacer hover */
+}
+
+/* Hover del botón de iniciar sesión */
+#login-container > button:hover {
+    background-color: #333; /* Cambiar fondo a gris oscuro al pasar el ratón */
+}
+
+/* Imagen superior del login */
+#login-img {
+    height: auto; /* Mantener proporción original de la imagen */
+    margin-bottom: 10px; /* Separación inferior respecto al input siguiente */
+    width: 100px; /* Anchura de la imagen */
+}
+
+/* Botón para mostrar/ocultar contraseña */
+#login-mostrar {
+    background-color: #f8f8f8; /* Fondo claro para que combine con el input */
+    border: 1px solid black; /* Borde negro sobrio */
+    border-radius: 0 10px 10px 0; /* Esquinas redondeadas en el lado derecho */
+    cursor: pointer; /* Cambiar cursor al pasar el ratón */
+    padding: 5px; /* Espaciado interno para que el ícono no se pegue */
+}
+
+/* Imagen dentro del botón mostrar contraseña */
+#login-mostrar-img {
+    height: 20px; /* Altura fija de la imagen del ícono */
+    width: 20px; /* Anchura fija del ícono */
+}
+
+/* Contenedor del input de contraseña y botón mostrar */
+#login-pass-container {
+    display: flex; /* Usar flexbox para alinear input y botón en la misma fila */
+    width: 100%; /* Ocupar el ancho completo del contenedor padre */
+}
+
+/* Input de contraseña */
+#login-password {
+    background-color: #f8f8f8; /* Fondo claro del input */
+    border: 1px solid black; /* Borde negro sobrio */
+    border-radius: 10px 0 0 10px; /* Esquinas redondeadas solo en el lado izquierdo */
+    border-right: none; /* Eliminar borde del lado derecho (junto al botón) */
+    flex: 1; /* Ocupar el espacio disponible menos el botón */
+    font-size: 14px; /* Tamaño de texto del input */
+    padding: 10px; /* Espaciado interno */
+}
+
+/* Input de usuario */
+#login-user {
+    background-color: #f8f8f8; /* Fondo claro del input */
+    border: 1px solid black; /* Borde negro sobrio */
+    border-radius: 10px; /* Esquinas redondeadas */
+    display: block; /* Mostrar como bloque para ocupar toda la línea */
+    font-size: 14px; /* Tamaño de texto */
+    padding: 10px; /* Espaciado interno */
+    width: 100%; /* Ocupar el ancho del contenedor */
+}
+
+
+
+
 /* Estilos para el canvas del PDF */
 #pdf-canvas {
     align-self: stretch; /* Iguala la altura con el contenedor izquierdo */
@@ -546,6 +628,7 @@ ul li {
     margin-bottom: 0; /* Margen inferior */
 }
 
+
 /* ------------- */
 /* Media Queries */
 /* ------------- */
@@ -657,7 +740,8 @@ ul li {
         width: 40px; /* Ancho del icono */
     }
 
-    /* Estilos para el ultimo elemento del menu en pantallas pequeñas */
+    /* Estilos para el ultimo elemento del menu en panta
+    llas pequeñas */
     #menu-final{
         height: 7px;
     }
