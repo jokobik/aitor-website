@@ -208,6 +208,7 @@ ul li {
 /* Contenedor principal del login */
 #login-container {
     align-items: center; /* Centrar elementos hijos horizontalmente */
+    color: black;
     display: flex; /* Usar flexbox para organizar en columna */
     flex-direction: column; /* Alinear elementos verticalmente uno debajo del otro */
     gap: 15px; /* Espacio entre cada elemento */
@@ -257,6 +258,8 @@ ul li {
 /* Contenedor del input de contraseña y botón mostrar */
 #login-pass-container {
     display: flex; /* Usar flexbox para alinear input y botón en la misma fila */
+    margin-top: 5px;
+    margin-bottom: 10px;
     width: 100%; /* Ocupar el ancho completo del contenedor padre */
 }
 
