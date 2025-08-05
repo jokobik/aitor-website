@@ -1,6 +1,7 @@
 from appWeb.models import anio_inicio
 from django.contrib.auth import login
-from django.shortcuts import render
+from django.contrib.auth.views import LoginView
+from django.shortcuts import render, redirect
 from django.views.generic import DetailView, ListView
 from django.http import HttpResponse
 from .models import Experiencia, Educacion, Certificado, Contacto, Usuario
@@ -164,13 +165,13 @@ class ContactoListView(ListView):
         return context
 
 
-# Vista para logearse como admin
-class LoginListView(ListView):
+# Vista para logearse
+class UserLoginView(LoginView):
     model = Usuario
     template_name = 'login.html'
 
     def get_context_data(self, **kwargs):
-        context = super(LoginListView, self).get_context_data(**kwargs)
+        context = super(UserLoginView, self).get_context_data(**kwargs)
         context['titulo_ventana'] = 'Login'
         context['titulo_pagina'] = 'Login'
 
@@ -179,3 +180,10 @@ class LoginListView(ListView):
         # Obtener nombre de instancia para titulo ventana
         context['logged_user'] = usuario.username"""
         return context
+
+    def post(self, request, *args, **kwargs):
+        context = super(UserLoginView, self).get_context_data(**kwargs)
+        context['titulo_ventana'] = 'Mi Cuenta'
+        context['titulo_pagina'] = 'Mi Cuenta'
+
+        return redirect('index')

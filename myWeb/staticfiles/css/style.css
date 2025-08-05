@@ -943,7 +943,7 @@ ul li {
 
 /* Estilos para pantallas verticales */
 @media (max-aspect-ratio: 1/1) {
-    /* Estilos para el contenedor de login en pantallas pequeñas */
+    /* Estilos para el contenedor de login en pantallas verticales */
     #login-container {
         width:75% /* Ocupa el 75% del ancho */
     }

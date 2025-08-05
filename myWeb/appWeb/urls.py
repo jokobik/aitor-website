@@ -21,5 +21,5 @@ urlpatterns = [
     path('contacto', views.ContactoListView.as_view(), name='contacto'),
 
     # Url para Login
-    path('login', views.LoginListView.as_view(), name='login'),
+    path('login', views.UserLoginView.as_view(), name='login'),
 ]

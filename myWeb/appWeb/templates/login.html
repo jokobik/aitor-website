@@ -2,18 +2,62 @@
 {% load static %}
 
 {% block contenido %}
-<section id="secciones">
+<!--<section id="secciones">
     <form action="{% url 'experiencia' %}" method="post">
         {% csrf_token %}
         <div id="login-container">
             <img id="login-img" alt="Login" src="{% static 'images/loginVista.png' %}">
-            <input id="login-user" placeholder="Usuario" name="user">
+            <input id="login-user" placeholder="Usuario" name="usuario">
             <div id="login-pass-container">
-                <input id="login-password" placeholder="Contraseña" type="password" name="password">
+                <input id="login-password" placeholder="Contraseña" type="password" name="passw">
                 <button type="button" id="login-mostrar">
                     <img id="login-mostrar-img" alt="Mostrar" src="{% static 'images/mostrarPass.png' %}">
                 </button>
             </div>
+            <button type="submit">Iniciar sesión</button>
+        </div>
+    </form>
+</section>-->
+
+<section id="secciones">
+    <form method="post">
+        {% csrf_token %}
+        <div id="login-container">
+            <img id="login-img" alt="Login" src="{% static 'images/loginVista.png' %}">
+
+            <input
+                id="login-user"
+                placeholder="Usuario"
+                type="text"
+                name="{{ form.username.name }}"
+                value="{{ form.username.value|default:'' }}"
+            >
+
+            {% for error in form.username.errors %}
+                <div class="error-message">{{ error }}</div>
+            {% endfor %}
+
+            <div id="login-pass-container">
+                <input
+                    id="login-password"
+                    placeholder="Contraseña"
+                    type="password"
+                    name="{{ form.password.name }}"
+                >
+
+                <button type="button" id="login-mostrar">
+                    <img id="login-mostrar-img" alt="Mostrar" src="{% static 'images/mostrarPass.png' %}">
+                </button>
+            </div>
+
+            {% for error in form.password.errors %}
+                <div class="error-message">{{ error }}</div>
+            {% endfor %}
+
+            {% for error in form.non_field_errors %}
+                <div class="error-message">{{ error }}</div>
+            {% endfor %}
+
             <button type="submit">Iniciar sesión</button>
         </div>
     </form>
