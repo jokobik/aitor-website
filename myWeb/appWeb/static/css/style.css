@@ -943,6 +943,11 @@ ul li {
 
 /* Estilos para pantallas verticales */
 @media (max-aspect-ratio: 1/1) {
+    /* Estilos para el contenedor de login en pantallas pequeñas */
+    #login-container {
+        width:75% /* Ocupa el 75% del ancho */
+    }
+
     /* Estilos para la vista del PDF en pantallas verticales */
     #vista-pdf {
         padding: 0; /* Elimina el padding */
