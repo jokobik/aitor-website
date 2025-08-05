@@ -934,9 +934,8 @@ ul li {
 }
 
 /* Estilos para pantallas con ancho máximo de 800px */
-@media (max-width: 1000px) {
-    /* Estilos para el contenedor de login en panta
-    llas pequeñas */
+@media (min-width: 801px) and (max-width: 1000px) {
+    /* Estilos para el contenedor de login en pantallas pequeñas */
     #login-container {
         width:35%
     }
