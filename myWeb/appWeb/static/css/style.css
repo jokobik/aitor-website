@@ -74,6 +74,11 @@ header {
     width: 100%; /* Ancho completo */
 }
 
+/* Ocultar botón nativo de mostrar contraseña en Edge */
+input[type="password"]::-ms-reveal {
+    display: none;
+}
+
 /* Estilos para el contenido principal */
 main {
     background: #f9f9f9; /* Color de fondo */
@@ -203,16 +208,30 @@ ul li {
     width: 100%; /* Ajusta el ancho de la imagen */
 }
 
-
+/* Estado normal (mostrar contraseña) */
+#login-mostrar.barra::after {
+    background: black; /* Color de la barra (puede cambiar en modo oscuro) */
+    border-radius: 10px; /* Esquinas redondeadas */
+    content: ""; /* Crea el pseudo-elemento vacío */
+    height: 2px; /* Grosor de la barra */
+    left: 50%; /* Centra horizontalmente */
+    pointer-events: none; /* Evita que interfiera con los clics en el botón */
+    position: absolute; /* Posiciona la barra relativa al botón */
+    top: 50%; /* Centra verticalmente */
+    transform: translate(-50%, -50%) rotate(45deg); /* Centra la barra y la rota en diagonal */
+    width: 24px; /* Longitud de la barra (ligeramente mayor que el icono) */
+    z-index: 2; /* Coloca la barra por encima de la imagen */
+}
 
 /* Estilos para el contenedor principal del login */
 #login-container {
     align-items: center; /* Centrar elementos hijos horizontalmente */
-    color: black;
+    color: black; /* Color de la fuente */
     display: flex; /* Usar flexbox para organizar en columna */
     flex-direction: column; /* Alinear elementos verticalmente uno debajo del otro */
     gap: 15px; /* Espacio entre cada elemento */
-    margin: auto;
+    margin: auto; /* Centrar en el contenedor */
+    position: relative; /* Posicionar relativamente en el contendor */
     width: 25%; /* Ancho fijo del formulario */
 }
 
@@ -242,11 +261,16 @@ ul li {
 
 /* Estilos para el botón para mostrar/ocultar contraseña */
 #login-mostrar {
-    background-color: #f8f8f8; /* Fondo claro para que combine con el input */
-    border: 1px solid black; /* Borde negro sobrio */
-    border-radius: 0 10px 10px 0; /* Esquinas redondeadas en el lado derecho */
-    cursor: pointer; /* Cambiar cursor al pasar el ratón */
-    padding: 5px; /* Espaciado interno para que el ícono no se pegue */
+    align-items: center; /* Alinea verticalmente la imagen */
+    background-color: #f8f8f8; /* Fondo claro para diferenciar el botón */
+    border: 2px solid black; /* Borde negro sobrio */
+    border-left: none; /* Quitar borde izquierdo */
+    border-radius: 0 10px 10px 0; /* Bordes redondeados solo en el lado derecho */
+    cursor: pointer; /* Cambia el cursor a mano al pasar */
+    display: flex; /* Para centrar la imagen dentro del botón */
+    justify-content: center; /* Centra horizontalmente la imagen */
+    padding: 5px; /* Espaciado interno para separar imagen del borde */
+    position: relative; /* Necesario para que la barra ::after se posicione dentro del botón */
 }
 
 /* Estilos para el imagen dentro del botón mostrar contraseña */
@@ -258,15 +282,16 @@ ul li {
 /* Estilos para el contenedor del input de contraseña y botón mostrar */
 #login-pass-container {
     display: flex; /* Usar flexbox para alinear input y botón en la misma fila */
-    margin-top: 5px;
-    margin-bottom: 10px;
+    margin-top: 5px; /* Margen superior */
+    margin-bottom: 10px; /* Margen inferior */
+    position: relative; /* Añadir: limita el contexto de posicionamiento al contenedor */
     width: 100%; /* Ocupar el ancho completo del contenedor padre */
 }
 
 /* Estilos para el input de contraseña */
 #login-password {
     background-color: #f8f8f8; /* Fondo claro del input */
-    border: 1px solid black; /* Borde negro sobrio */
+    border: 2px solid black; /* Borde negro sobrio */
     border-radius: 10px 0 0 10px; /* Esquinas redondeadas solo en el lado izquierdo */
     border-right: none; /* Eliminar borde del lado derecho (junto al botón) */
     color: grey; /* Color de la fuente */
@@ -279,7 +304,7 @@ ul li {
 /* Estilos para el input de usuario */
 #login-user {
     background-color: #f8f8f8; /* Fondo claro del input */
-    border: 1px solid black; /* Borde negro sobrio */
+    border: 2px solid black; /* Borde negro sobrio */
     border-radius: 10px; /* Esquinas redondeadas */
     color: grey; /* Color de la fuente */
     display: block; /* Mostrar como bloque para ocupar toda la línea */
@@ -288,8 +313,14 @@ ul li {
     width: 100%; /* Ocupar el ancho del contenedor */
 }
 
-
-
+/* Quitar borde/outline por defecto al enfocar */
+#login-user:focus,
+#login-password:focus,
+#login-container > button:focus,
+#login-mostrar:focus {
+    outline: none; /* Quitar contorno */
+    box-shadow: none; /* Quitar resaltes */
+}
 
 /* Estilos para el canvas del PDF */
 #pdf-canvas {
@@ -732,7 +763,7 @@ ul li {
 
     /* Estilos para los elementos del footer en pantallas pequeñas */
     #fcer, #fder, #fizq {
-        margin-bottom: 10px; /* Margen inferior */
+        /* margin-bottom: 10px;  Margen inferior */
         text-align: center; /* Alineación del texto */
     }
 
@@ -755,10 +786,8 @@ ul li {
     /* Estilos para el contenedor de login en panta
     llas pequeñas */
     #login-container {
-        max-width:100%
+        width:50%
     }
-
-
 
     /* Estilos para el canvas del PDF en pantallas pequeñas */
     #pdf-canvas {
@@ -901,6 +930,15 @@ ul li {
         align-items: flex-start; /* Alinea los elementos al inicio */
         display: flex; /* Usa Flexbox para alinear elementos */
         flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    }
+}
+
+/* Estilos para pantallas con ancho máximo de 800px */
+@media (max-width: 1000px) {
+    /* Estilos para el contenedor de login en panta
+    llas pequeñas */
+    #login-container {
+        width:35%
     }
 }
 

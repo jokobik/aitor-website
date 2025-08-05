@@ -8,7 +8,9 @@
     <meta name="color-scheme" content="light dark">
     <title>Aitor | {{ titulo_ventana }}</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <script src="{% static 'js/animacion_menu.js' %}"></script>
+    <script src="{% static 'js/animacion_menu.js' %}" defer></script>
+    <script src="{% static 'js/pdf_viewer.js' %}" defer></script>
+    <script src="{% static 'js/ocultar_pass.js' %}" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
     <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 </head>

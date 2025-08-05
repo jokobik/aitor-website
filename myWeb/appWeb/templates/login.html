@@ -3,16 +3,19 @@
 
 {% block contenido %}
 <section id="secciones">
-    <div id="login-container">
-        <img id="login-img" alt="Login" src="{% static 'images/loginVista.png' %}">
-        <input id="login-user" placeholder="Usuario">
-        <div id="login-pass-container">
-            <input id="login-password" placeholder="Contraseña" type="password">
-            <button type="button" id="login-mostrar">
-                <img id="login-mostrar-img" alt="Mostrar" src="{% static 'images/mostrarPass.png' %}">
-            </button>
+    <form action="{% url 'experiencia' %}" method="post">
+        {% csrf_token %}
+        <div id="login-container">
+            <img id="login-img" alt="Login" src="{% static 'images/loginVista.png' %}">
+            <input id="login-user" placeholder="Usuario" name="user">
+            <div id="login-pass-container">
+                <input id="login-password" placeholder="Contraseña" type="password" name="password">
+                <button type="button" id="login-mostrar">
+                    <img id="login-mostrar-img" alt="Mostrar" src="{% static 'images/mostrarPass.png' %}">
+                </button>
+            </div>
+            <button type="submit">Iniciar sesión</button>
         </div>
-        <button>Iniciar sesion</button>
-    </div>
+    </form>
 </section>
 {% endblock %}
